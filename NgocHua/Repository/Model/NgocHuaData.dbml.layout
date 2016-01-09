@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="NgocHuaData">
+  <DataContextMoniker Name="/NgocHuaDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5ef3c2bf-5447-4e07-b0cf-1304f4d3411d" absoluteBounds="6.25, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/NgocHuaDataDataContext/ChiTietHd" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cc5935a-4417-4698-90e6-b0dda9fcb38b" absoluteBounds="6.265, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="99138ad7-ba36-4da0-a87b-0b85838f2b96" absoluteBounds="0.75, 1, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/NgocHuaDataDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58abc989-737d-4bd0-8cd2-d8c810b0a63b" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b798619-c172-40bd-b1c3-d11d6b74d196" absoluteBounds="3.5, 5.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/NgocHuaDataDataContext/HangHoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51477cfd-d1d2-41f9-b442-f9edbd2f033a" absoluteBounds="3.515, 5.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6ed887f-5c20-4128-991c-9d097af2c530" absoluteBounds="3.5, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/NgocHuaDataDataContext/HoaDon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c124c12-7931-4aee-986d-7751945e05c0" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.20274983723958); (7.25 : 6.20274983723958); (7.25 : 3.28049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NgocHuaDataDataContext/HangHoa/HangHoa_ChiTietHd" />
+      <nodes>
+        <classShapeMoniker Id="4b798619-c172-40bd-b1c3-d11d6b74d196" />
+        <classShapeMoniker Id="5ef3c2bf-5447-4e07-b0cf-1304f4d3411d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.20274983723958); (6.25 : 2.20274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NgocHuaDataDataContext/HoaDon/HoaDon_ChiTietHd" />
+      <nodes>
+        <classShapeMoniker Id="c6ed887f-5c20-4128-991c-9d097af2c530" />
+        <classShapeMoniker Id="5ef3c2bf-5447-4e07-b0cf-1304f4d3411d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.20274983723958); (3.5 : 2.20274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NgocHuaDataDataContext/TaiKhoan/TaiKhoan_HoaDon" />
+      <nodes>
+        <classShapeMoniker Id="99138ad7-ba36-4da0-a87b-0b85838f2b96" />
+        <classShapeMoniker Id="c6ed887f-5c20-4128-991c-9d097af2c530" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

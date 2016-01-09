@@ -1,0 +1,432 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="NgocHua.User" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title>Ngoc Hua Shop</title>
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic' rel='stylesheet' type='text/css' />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/fontello.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.css" />
+    <link rel="stylesheet" href="css/chosen.css" />
+
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<link rel="stylesheet" href="css/ie.css">
+        <![endif]-->
+    <!--[if IE 7]>
+			<link rel="stylesheet" href="css/fontello-ie7.css">
+		<![endif]-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Header -->
+            <header class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <!-- Main Header -->
+                    <div id="main-header">
+
+                        <div class="row">
+
+                            <div id="logo" class="col-lg-4 col-md-4 col-sm-4">
+                                <a href="home_v1.html">
+                                    <img src="img/logo.png" alt="Logo"></a>
+                            </div>
+
+                            <nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
+                                <ul class="pull-right">
+                                    <li class="orange"><a href="order_info.html"><i class="icons icon-basket-2"></i>17 Items</a>
+                                        <ul id="cart-dropdown" class="box-dropdown parent-arrow">
+                                            <li>
+                                                <div class="box-wrapper parent-border">
+                                                    <p>Recently added item(s)</p>
+
+                                                    <table class="cart-table">
+                                                        <tr>
+                                                            <td>
+                                                                <img src="img/products/sample1.jpg" alt="product"></td>
+                                                            <td>
+                                                                <h6>Lorem ipsum dolor</h6>
+                                                                <p>Product code PSBJ3</p>
+                                                            </td>
+                                                            <td>
+                                                                <span class="quantity"><span class="light">1 x</span> $79.00</span>
+                                                                <a href="#" class="parent-color">Remove</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="img/products/sample1.jpg" alt="product"></td>
+                                                            <td>
+                                                                <h6>Lorem ipsum dolor</h6>
+                                                                <p>Product code PSBJ3</p>
+                                                            </td>
+                                                            <td>
+                                                                <span class="quantity"><span class="light">1 x</span> $79.00</span>
+                                                                <a href="#" class="parent-color">Remove</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <img src="img/products/sample1.jpg" alt="product"></td>
+                                                            <td>
+                                                                <h6>Lorem ipsum dolor</h6>
+                                                                <p>Product code PSBJ3</p>
+                                                            </td>
+                                                            <td>
+                                                                <span class="quantity"><span class="light">1 x</span> $79.00</span>
+                                                                <a href="#" class="parent-color">Remove</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <br class="clearfix">
+                                                </div>
+
+                                                <div class="footer">
+                                                    <table class="checkout-table pull-right">
+                                                        <tr>
+                                                            <td class="align-right">Tax:</td>
+                                                            <td>$0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-right">Discount:</td>
+                                                            <td>$37.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="align-right"><strong>Total:</strong></td>
+                                                            <td><strong class="parent-color">$999.00</strong></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+
+                                                <div class="box-wrapper no-border">
+                                                    <a class="button pull-right parent-background" href="#">Checkout</a>
+                                                    <a class="button pull-right" href="order_info.html">View Cart</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="login-create purple">
+                                        <i class="icons icon-user"></i>
+                                        <p>
+                                            Hello Guest! <a href="#">Login</a> or<br>
+                                            <a href="#">Create Account</a>
+                                        </p>
+                                        <ul id="login-dropdown" class="box-dropdown">
+                                            <li>
+                                                <div class="box-wrapper">
+                                                    <h4>LOGIN</h4>
+                                                    <div class="iconic-input">
+                                                        <input type="text" placeholder="Username">
+                                                        <i class="icons icon-user-3"></i>
+                                                    </div>
+                                                    <div class="iconic-input">
+                                                        <input type="text" placeholder="Password">
+                                                        <i class="icons icon-lock"></i>
+                                                    </div>
+                                                    <input type="checkbox" id="loginremember">
+                                                    <label for="loginremember">Remember me</label>
+                                                    <br>
+                                                    <br>
+                                                    <div class="pull-left">
+                                                        <input type="submit" class="orange" value="Login">
+                                                    </div>
+                                                    <div class="pull-right">
+                                                        <a href="#">Forgot your password?</a>
+                                                        <br>
+                                                        <a href="#">Forgot your username?</a>
+                                                        <br>
+                                                    </div>
+                                                    <br class="clearfix">
+                                                </div>
+                                                <div class="footer">
+                                                    <h4 class="pull-left">NEW CUSTOMER?</h4>
+                                                    <a class="button pull-right" href="create_an_account.html">Create an account</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+
+                    </div>
+                    <!-- /Main Header -->
+
+
+                    <!-- Main Navigation -->
+                    <nav id="main-navigation" class="style3">
+                        <ul>
+
+                            <li class="home-green current-item">
+                                <a href="TrangChu">
+                                    <span class="nav-caption">Trang Chủ</span>
+                                </a>
+                            </li>
+
+                            <li class="red">
+                                <a href="SanPham">
+                                    <span class="nav-caption">Sản Phẩm</span>
+                                </a>
+
+                                <ul class="wide-dropdown normalAniamtion">
+                                    <li>
+                                        <ul>
+                                            <li><span class="nav-caption">Digital Cameras</span></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Digital SLR</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Point &amp; Shoot</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Spy, Miniature</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><span class="nav-caption">Digital Cameras</span></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Background Material</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Continuous Lighting</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Flash Lighting</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Light Meters</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><span class="nav-caption">Digital Cameras</span></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Batteries</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Cables &amp; Adapters</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Camcorder Tapes &amp; Discs</a></li>
+                                            <li><a href="#"><i class="icons icon-right-dir"></i>Cases, Bags &amp; Covers</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+
+                            <li class="blue">
+                                <a href="GioHang.aspx">
+                                    <span class="nav-caption">Giỏ Hàng</span>
+                                </a>
+                            </li>
+
+                            <li class="orange">
+                                <a href="LienHe">
+                                    <span class="nav-caption">Liên Hệ</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-search">
+                                <i class="icons icon-search-1"></i>
+                            </li>
+
+                        </ul>
+
+                        <div id="search-bar">
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <table id="search-bar-table">
+                                    <tr>
+                                        <td class="search-column-1">
+                                            <p><span class="grey">Popular Searches:</span> <a href="#">accessories</a>, <a href="#">audio</a>, <a href="#">camera</a>, <a href="#">phone</a>, <a href="#">storage</a>, <a href="#">more</a></p>
+                                            <input type="text" placeholder="Enter your keyword">
+                                        </td>
+                                        <td class="search-column-2">
+                                            <p class="align-right"><a href="#">Advanced Search</a></p>
+                                            <select class="chosen-select-search">
+                                                <option>All Categories</option>
+                                                <option>All Categories</option>
+                                                <option>All Categories</option>
+                                                <option>All Categories</option>
+                                                <option>All Categories</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="search-button">
+                                <input type="submit" value="">
+                                <i class="icons icon-search-1"></i>
+                            </div>
+                        </div>
+
+                    </nav>
+                    <!-- /Main Navigation -->
+
+                </div>
+
+            </header>
+            <!-- /Header -->
+
+
+            <!-- Content -->
+            <div class="row content">
+
+
+                <!-- Slider -->
+                <section class="slider col-lg-12 col-md-12 col-sm-12">
+                    <asp:ContentPlaceHolder ID="mainSlide" runat="server" />
+                </section>
+                <!-- /Slider -->
+
+
+                <!-- Banner Items -->
+                <section class="banner col-lg-12 col-md-12 col-sm-12">
+                    <asp:ContentPlaceHolder runat="server" ID="bannerItems" />
+                </section>
+                <!-- /Banner Items -->
+
+
+                <!-- Main Content -->
+                <section class="main-content col-lg-9 col-md-9 col-sm-9">
+                    <asp:ContentPlaceHolder ID="mainContent" runat="server" />
+                </section>
+                <!-- /Main Content -->
+
+
+                <!-- Sidebar -->
+                <aside class="sidebar right-sidebar col-lg-3 col-md-3 col-sm-3">
+
+                    <!-- Categories -->
+                    <div class="row sidebar-box purple">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                            <div class="sidebar-box-heading">
+                                <i class="icons icon-folder-open-empty"></i>
+                                <h4>Sản Phẩm</h4>
+                            </div>
+
+                            <div class="sidebar-box-content">
+                                <ul>
+                                    <li><a href="#">Cameras &amp; Photography <i class="icons icon-right-dir"></i></a></li>
+                                    <li><a href="#">Computers &amp; Tablets <i class="icons icon-right-dir"></i></a></li>
+                                    <li><a href="#">Cell Phones &amp; Accessories <i class="icons icon-right-dir"></i></a>
+                                        <ul class="sidebar-dropdown">
+                                            <li>
+                                                <ul>
+                                                    <li><a href="#">Cell phones &amp; Smartphone</a></li>
+                                                    <li><a href="#">Cell Phone Accessories</a></li>
+                                                    <li><a href="#">Headsets</a></li>
+                                                    <li><a href="#">Cases, Covers & Skins</a></li>
+                                                    <li><a href="#">Screen Protectors</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li><a href="#">Chargers & Cradles</a></li>
+                                                    <li><a href="#">Batteries</a></li>
+                                                    <li><a href="#">Cables & Adapters</a></li>
+                                                    <li><a href="#">All About Smartphones</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">TV, Audio &amp; Surveillance <i class="icons icon-right-dir"></i></a></li>
+                                    <li><a href="#">Video Games &amp; Consoles <i class="icons icon-right-dir"></i></a></li>
+                                    <li><a href="#">Car Audio, Video &amp; GPS <i class="icons icon-right-dir"></i></a></li>
+                                    <li><a href="#">Best Sellers <i class="icons icon-right-dir"></i></a></li>
+                                    <li><a href="#">Shop by Brands <i class="icons icon-right-dir"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /Categories -->
+
+                </aside>
+                <!-- /Sidebar -->
+
+            </div>
+            <!-- /Content -->
+
+
+            <!-- Footer -->
+            <footer id="footer" class="row">
+
+                <!-- Main Footer -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <asp:ContentPlaceHolder runat="server" ID="footerContent"/>
+                </div>
+                <!-- /Main Footer -->
+
+            </footer>
+            <!-- Footer -->
+
+
+            <div id="back-to-top">
+                <i class="icon-up-dir"></i>
+            </div>
+
+        </div>
+        <!-- Container -->
+
+        <div>
+        </div>
+    </form>
+
+    <!-- JavaScript -->
+    <script src="js/modernizr.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+
+    <!-- Scroll Bar -->
+    <script src="js/perfect-scrollbar.min.js"></script>
+
+    <!-- Cloud Zoom -->
+    <script src="js/zoomsl-3.0.min.js"></script>
+
+    <!-- FancyBox -->
+    <script src="js/jquery.fancybox.pack.js"></script>
+
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- FlexSlider -->
+    <script defer src="js/flexslider.min.js"></script>
+
+    <!-- IOS Slider -->
+    <script src="js/jquery.iosslider.min.js"></script>
+
+    <!-- noUi Slider -->
+    <script src="js/jquery.nouislider.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- Cloud Zoom -->
+    <script src="js/zoomsl-3.0.min.js"></script>
+
+    <!-- SelectJS -->
+    <script src="js/chosen.jquery.min.js" type="text/javascript"></script>
+
+    <!-- Main JS -->
+    <script defer src="js/bootstrap.min.js"></script>
+    <script src="js/main-script.js"></script>
+</body>
+</html>
