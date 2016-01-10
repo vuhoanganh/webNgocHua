@@ -14,7 +14,8 @@ namespace Repository.IRepository
         IEnumerable<HangHoa> GetAll();
         IEnumerable<HangHoa> Find(string key);
         HangHoa Find(int key);
-        void Remove(int key);
-        void Update(HangHoa item);
+        string Remove(int key);
+        string Update(HangHoa item);
+        IEnumerable<HangHoa> FindByType(string key);
     }
 }

@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Repository.IRepository;
 using Repository.Model;
 
 namespace Repository.Repository
 {
-    public class HangHoaRepository : IHangHoaRepository
+    public class HangHoaRepository
     {
         private readonly NgocHuaDataDataContext _dataContext = new NgocHuaDataDataContext();
         public void Import(List<HangHoa> items)
@@ -30,7 +27,8 @@ namespace Repository.Repository
 
         public IEnumerable<HangHoa> Find(string key)
         {
-            return _dataContext.HangHoas.Where(x => x.Ten.Contains(key) || x.Nhom.Contains(key) || x.SanXuat.Contains(key));
+            var source = _dataContext.HangHoas.Where(x => x.Ten.Contains(key) || x.Nhom.Contains(key) || x.SanXuat.Contains(key));
+            return source.Any() ? source : GetAll();
         }
 
         public HangHoa Find(int key)
@@ -38,16 +36,46 @@ namespace Repository.Repository
             return _dataContext.HangHoas.FirstOrDefault(x => x.Id == key);
         }
 
-        public void Remove(int key)
+        public string Remove(int key)
         {
-            var item = Find(key);
-            _dataContext.HangHoas.DeleteOnSubmit(item);
-            _dataContext.SubmitChanges();
+            try
+            {
+                var item = Find(key);
+                _dataContext.HangHoas.DeleteOnSubmit(item);
+                _dataContext.SubmitChanges();
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
-        public void Update(HangHoa item)
+        public string Update(HangHoa item)
         {
-            _dataContext.SubmitChanges();
+            try
+            {
+                _dataContext.SubmitChanges();
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public IEnumerable<HangHoa> FindByType(string key)
+        {
+            var source = _dataContext.HangHoas.Where(x => x.Nhom == key).ToList();
+            return source.Any() ? source : GetAll();
+        }
+
+        public IEnumerable<HangHoa> FindByType(string type, string key)
+        {
+            key = key.ToLower();
+            return FindByType(key).Where(x => x.Stt.ToString().Contains(key) || x.Ten.ToLower().Contains(key) 
+            || x.Nhom.ToLower().Contains(key) || x.SanXuat.ToLower().Contains(key)).ToList();
         }
     }
 }
