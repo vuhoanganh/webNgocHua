@@ -14,10 +14,18 @@ namespace Repository.Repository
             _dataContext.SubmitChanges();
         }
 
-        public void Add(HangHoa item)
+        public string Add(HangHoa item)
         {
-            _dataContext.HangHoas.InsertOnSubmit(item);
-            _dataContext.SubmitChanges();
+            try
+            {
+                _dataContext.HangHoas.InsertOnSubmit(item);
+                _dataContext.SubmitChanges();
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         public IEnumerable<HangHoa> GetAll()

@@ -7,7 +7,7 @@ namespace NgocHua.Admin
 {
     public partial class SanPham : System.Web.UI.Page
     {
-        private static readonly HangHoaRepository SpRepository = new HangHoaRepository();
+        private readonly HangHoaRepository _spRepository = new HangHoaRepository();
         private string _type;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -17,14 +17,14 @@ namespace NgocHua.Admin
 
             if (Page.IsPostBack) return;
 
-            grid.DataSource = SpRepository.FindByType(_type);
+            grid.DataSource = _spRepository.FindByType(_type);
             grid.DataBind();
         }
         
         protected void grid_OnNeedDataSource(object sender, GridNeedDataSourceEventArgs e)
         {
             var key = txtSearch.Value;
-            grid.DataSource = SpRepository.FindByType(_type, key);
+            grid.DataSource = _spRepository.FindByType(_type, key);
         }
 
         protected void grid_OnItemCommand(object sender, GridCommandEventArgs e)
@@ -51,7 +51,7 @@ namespace NgocHua.Admin
             var item = ((GridDataItem)e.Item);
             var id = (int)item.GetDataKeyValue("Id");
 
-            var message = SpRepository.Remove(id);
+            var message = _spRepository.Remove(id);
 
             ShowError(!string.IsNullOrEmpty(message) ? message : "Xóa thành công");
         }
@@ -64,7 +64,7 @@ namespace NgocHua.Admin
         protected void btnSearch_OnServerClick(object sender, EventArgs e)
         {
             var key = txtSearch.Value;
-            grid.DataSource = SpRepository.FindByType(_type, key);
+            grid.DataSource = _spRepository.FindByType(_type, key);
             grid.DataBind();
         }
     }

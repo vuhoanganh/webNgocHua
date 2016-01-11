@@ -23,7 +23,7 @@ namespace NgocHua.Admin
 
             if (Session["User"] == null)
             {
-                Response.Redirect("Login");
+                Response.Redirect("~/Admin/Login.aspx");
                 return;
             }
 
