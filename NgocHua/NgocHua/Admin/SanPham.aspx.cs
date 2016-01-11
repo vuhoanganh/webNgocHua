@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using LinqToExcel;
+using NgocHua.Models;
+using Repository.Model;
 using Repository.Repository;
 using Telerik.Web.UI;
+using System.IO;
 
 namespace NgocHua.Admin
 {
@@ -67,5 +72,83 @@ namespace NgocHua.Admin
             grid.DataSource = _spRepository.FindByType(_type, key);
             grid.DataBind();
         }
+        
+        protected void btnImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(fileImport.FileName))
+                    return;
+
+                var source = SaveFile_ReturnData();
+
+                ShowError(source != null && source.Any()
+                    ? ImportData(source)
+                    : "Import Data is null");
+
+                grid.DataSource = _spRepository.FindByType(_type);
+                grid.DataBind();
+            }
+            catch (Exception ex)
+            {
+                ShowError(ex.Message);
+            }
+        }
+
+        public List<HangHoa> SaveFile_ReturnData()
+        {
+            var savePath = Server.MapPath("~/App_Data/Temp/") + fileImport.FileName;
+            if (!File.Exists(savePath))
+                fileImport.SaveAs(savePath);
+
+            var excel = new ExcelQueryFactory(savePath);
+
+            var dataExcel = GetDataExcel(excel);
+
+            var source = dataExcel.Select(GetData).ToList();
+            
+            return source;
+        }
+
+        public List<ExcelItem> GetDataExcel(ExcelQueryFactory excel)
+        {
+            excel.AddMapping<ExcelItem>(x => x.Stt, "STT");
+            excel.AddMapping<ExcelItem>(x => x.Nhom, "Nhóm hàng hóa");
+            excel.AddMapping<ExcelItem>(x => x.Ten, "Tên sản phẩm");
+            excel.AddMapping<ExcelItem>(x => x.DonVi, "ĐVT");
+            excel.AddMapping<ExcelItem>(x => x.SanXuat, "Nhà sản xuất");
+            //excel.AddMapping<ExcelItem>(x => x.Gia, "sdt");
+
+            return (from p in excel.Worksheet<ExcelItem>()
+                    select p).ToList();
+        }
+
+        public string ImportData(List<HangHoa> source)
+        {
+            try
+            {
+                _spRepository.Import(source);
+                
+                return "Nhập dữ liệu mới thành công";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+        public HangHoa GetData(ExcelItem input)
+        {
+            return new HangHoa
+            {
+                Stt = input.Stt,
+                Nhom = input.Nhom,
+                Ten = input.Ten,
+                DonVi = input.DonVi,
+                SanXuat = input.SanXuat,
+                Gia = input.Gia
+            };
+        }
+
     }
 }

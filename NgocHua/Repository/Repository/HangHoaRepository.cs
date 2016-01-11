@@ -10,6 +10,7 @@ namespace Repository.Repository
         private readonly NgocHuaDataDataContext _dataContext = new NgocHuaDataDataContext();
         public void Import(List<HangHoa> items)
         {
+            _dataContext.HangHoas.DeleteAllOnSubmit(_dataContext.HangHoas);
             _dataContext.HangHoas.InsertAllOnSubmit(items);
             _dataContext.SubmitChanges();
         }

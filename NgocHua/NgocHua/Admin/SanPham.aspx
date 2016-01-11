@@ -5,6 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <div class="panel-body table-responsive">
+        <div style="float: left">
+            <asp:FileUpload ID="fileImport" runat="server" /></div>
+        <div style="float: left; margin-left: 20px;">
+            <asp:Button ID="btnImport" runat="server" CssClass="btn btn-primary" Text="Import" OnClick="btnImport_Click" />
+        </div>
         <div class="box-tools m-b-15">
             <div class="input-group">
                 <input type="text" id="txtSearch" name="table_search" class="form-control input-sm pull-right" style="width: 250px;" placeholder="Tìm kiếm" runat="server" />
