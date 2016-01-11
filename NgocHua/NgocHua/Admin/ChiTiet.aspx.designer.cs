@@ -67,6 +67,24 @@ namespace NgocHua.Admin {
         protected global::Telerik.Web.UI.RadNumericTextBox txtGia;
         
         /// <summary>
+        /// cboHot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cboHot;
+        
+        /// <summary>
+        /// cboSale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cboSale;
+        
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>

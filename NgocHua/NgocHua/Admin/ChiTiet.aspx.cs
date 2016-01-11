@@ -33,6 +33,8 @@ namespace NgocHua.Admin
             txtDonVi.Value = item.DonVi;
             txtSanXuat.Value = item.SanXuat;
             txtGia.Value = Convert.ToDouble(item.Gia ?? 0);
+            cboHot.Checked = item.IsHot == true;
+            cboSale.Checked = item.IsSale == true;
         }
 
         protected void btnSave_OnServerClick(object sender, EventArgs e)
@@ -48,6 +50,8 @@ namespace NgocHua.Admin
             item.DonVi = txtDonVi.Value;
             item.SanXuat = txtSanXuat.Value;
             item.Gia = (decimal?)txtGia.Value;
+            item.IsHot = cboHot.Checked;
+            item.IsSale = cboSale.Checked;
 
             var message = item.Id > 0 ? repo.Update(item) : repo.Add(item);
 

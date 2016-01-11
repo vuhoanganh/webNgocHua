@@ -1736,6 +1736,10 @@ input[type="checkbox"]:checked + label.color-checkbox{
 	color:#9b59b6;
 }
 
+.purple .sidebar-box-content>ul>li>a.selected{
+	color:#9b59b6 !important;
+}
+
 .blue .sidebar-box-heading, .blue a.tag-item:hover{
 	background:#3498db;
 }	
@@ -2540,13 +2544,12 @@ span.add-to-compare:hover{
 
 span.action-name{
 	position:absolute;
-	left:85px;
 	text-transform:uppercase;
-	opacity:0;
-	-webkit-opacity:0;
-	-moz-opacity:0;
-	-ms-opacity:0;
-	-o-opacity:0;
+	opacity:1;
+	-webkit-opacity:1;
+	-moz-opacity:1;
+	-ms-opacity:1;
+	-o-opacity:1;
 	transition:all 0.3s;
 	-webkit-transition:all 0.3s;
 	-moz-transition:all 0.3s;
@@ -4368,7 +4371,7 @@ input[type="text"], select{
 }
 
 input[type="submit"], input[type="reset"]{
-	background:#2ecc71;
+	/*background:#2ecc71;*/
 	color:#fff;
 	text-transform:uppercase;
 	height:40px;
@@ -4387,7 +4390,7 @@ input[type="reset"].dark-blue{
 }
 
 input[type="submit"]:hover{
-	background:#21bf64;
+	/*background:#21bf64;*/
 }
 
 input[type="submit"].big, input[type="reset"].big{

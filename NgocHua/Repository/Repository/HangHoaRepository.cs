@@ -19,6 +19,7 @@ namespace Repository.Repository
         {
             try
             {
+                item.CreatedDate = DateTime.Now;
                 _dataContext.HangHoas.InsertOnSubmit(item);
                 _dataContext.SubmitChanges();
                 return string.Empty;
@@ -32,6 +33,23 @@ namespace Repository.Repository
         public IEnumerable<HangHoa> GetAll()
         {
             return _dataContext.HangHoas.ToList();
+        }
+
+        public IEnumerable<HangHoa> GetByNew()
+        {
+            return _dataContext.HangHoas.OrderByDescending(x => x.Id).ToList();
+        }
+
+        public IEnumerable<HangHoa> GetByHot()
+        {
+            var source = _dataContext.HangHoas.Where(x => x.IsHot == true).Take(8).ToList();
+            return source.Any() ? source : GetAll().Take(8);
+        }
+
+        public IEnumerable<HangHoa> GetBySale()
+        {
+            var source = _dataContext.HangHoas.Where(x => x.IsSale == true).Take(8).ToList();
+            return source.Any() ? source : GetByNew().Take(8);
         }
 
         public IEnumerable<HangHoa> Find(string key)

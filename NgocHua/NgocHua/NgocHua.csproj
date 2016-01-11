@@ -818,6 +818,7 @@
     <Content Include="blog_post.html" />
     <Content Include="category_v1.html" />
     <Content Include="category_v2.html" />
+    <Content Include="ChiTiet.aspx" />
     <Content Include="compare_products.html" />
     <Content Include="contact.html" />
     <Content Include="Content\bootstrap.css" />
@@ -1194,6 +1195,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="ChiTiet.aspx.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTiet.aspx.designer.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTemplate\ItemSlideTemplate.cs" />
     <Compile Include="GioHang.aspx.cs">
       <DependentUpon>GioHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1204,6 +1213,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ConvertString.cs" />
     <Compile Include="LienHe.aspx.cs">
       <DependentUpon>LienHe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -104,8 +104,8 @@ namespace NgocHua.Admin
             var excel = new ExcelQueryFactory(savePath);
 
             var dataExcel = GetDataExcel(excel);
-
-            var source = dataExcel.Select(GetData).ToList();
+            var date = DateTime.Now;
+            var source = dataExcel.Select(x => GetData(x, date)).ToList();
             
             return source;
         }
@@ -137,7 +137,7 @@ namespace NgocHua.Admin
             }
         }
 
-        public HangHoa GetData(ExcelItem input)
+        public HangHoa GetData(ExcelItem input, DateTime date)
         {
             return new HangHoa
             {
@@ -146,7 +146,8 @@ namespace NgocHua.Admin
                 Ten = input.Ten,
                 DonVi = input.DonVi,
                 SanXuat = input.SanXuat,
-                Gia = input.Gia
+                Gia = input.Gia,
+                CreatedDate = date
             };
         }
 

@@ -49,6 +49,18 @@
                                 <Telerik:RadNumericTextBox ID="txtGia" CssClass="form-control" runat="server" ShowButton="False" />
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Bán chạy</label>
+                            <div class="col-sm-10">
+                                <input id="cboHot" type="checkbox" runat="server"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Khuyến mãi</label>
+                            <div class="col-sm-10">
+                                <input id="cboSale" type="checkbox" runat="server"/>
+                            </div>
+                        </div>
                         <div class="col-sm-4">
                             <button onclick="back()" type="button" class="btn btn-default">Trở về</button>
                         </div>
