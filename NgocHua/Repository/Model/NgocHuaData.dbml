@@ -9,8 +9,8 @@
       <Column Name="TotalAmt" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="HangHoaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HoaDonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="HoaDon_ChiTietHd" Member="HoaDon" ThisKey="HoaDonId" OtherKey="Id" Type="HoaDon" IsForeignKey="true" />
       <Association Name="HangHoa_ChiTietHd" Member="HangHoa" ThisKey="HangHoaId" OtherKey="Id" Type="HangHoa" IsForeignKey="true" />
+      <Association Name="HoaDon_ChiTietHd" Member="HoaDon" ThisKey="HoaDonId" OtherKey="Id" Type="HoaDon" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
@@ -27,19 +27,6 @@
       <Association Name="TaiKhoan_HoaDon" Member="HoaDons" ThisKey="Id" OtherKey="TaiKhoanId" Type="HoaDon" />
     </Type>
   </Table>
-  <Table Name="dbo.HoaDon" Member="HoaDons">
-    <Type Name="HoaDon">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Code" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="TotalAmt" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TaiKhoanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="HoaDon_ChiTietHd" Member="ChiTietHds" ThisKey="Id" OtherKey="HoaDonId" Type="ChiTietHd" />
-      <Association Name="TaiKhoan_HoaDon" Member="TaiKhoan" ThisKey="TaiKhoanId" OtherKey="Id" Type="TaiKhoan" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.HangHoa" Member="HangHoas">
     <Type Name="HangHoa">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -53,6 +40,31 @@
       <Column Name="IsSale" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="HangHoa_ChiTietHd" Member="ChiTietHds" ThisKey="Id" OtherKey="HangHoaId" Type="ChiTietHd" />
+      <Association Name="HangHoa_HinhAnh" Member="HinhAnhs" ThisKey="Id" OtherKey="HangHoaId" Type="HinhAnh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HinhAnh" Member="HinhAnhs">
+    <Type Name="HinhAnh">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HangHoaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HangHoa_HinhAnh" Member="HangHoa" ThisKey="HangHoaId" OtherKey="Id" Type="HangHoa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoaDon" Member="HoaDons">
+    <Type Name="HoaDon">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TotalAmt" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TaiKhoanId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XacNhan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TamThoi" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="HoaDon_ChiTietHd" Member="ChiTietHds" ThisKey="Id" OtherKey="HoaDonId" Type="ChiTietHd" />
+      <Association Name="TaiKhoan_HoaDon" Member="TaiKhoan" ThisKey="TaiKhoanId" OtherKey="Id" Type="TaiKhoan" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

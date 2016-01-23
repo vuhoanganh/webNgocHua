@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRepository\IChiTietHdRepository.cs" />
     <Compile Include="IRepository\IHangHoaRepository.cs" />
+    <Compile Include="IRepository\IHoaDonRepository.cs" />
     <Compile Include="Model\NgocHuaData.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -52,7 +54,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Repository\ChiTietHdRepository.cs" />
     <Compile Include="Repository\HangHoaRepository.cs" />
+    <Compile Include="Repository\HoaDonRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

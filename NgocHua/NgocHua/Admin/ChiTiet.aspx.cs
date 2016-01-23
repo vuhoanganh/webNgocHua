@@ -60,7 +60,7 @@ namespace NgocHua.Admin
 
         public void ShowError(string message)
         {
-            RadWindowManager1.RadAlert(message, null, 120, "Message", null, "/Images/infoAlert.png");
+            RadWindowManager1.RadAlert(message, null, 120, "Message", null, "/img/infoAlert.png");
         }
 
     }

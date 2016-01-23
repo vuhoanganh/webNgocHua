@@ -22,13 +22,31 @@ namespace NgocHua.Admin {
         protected global::System.Web.UI.WebControls.FileUpload fileImport;
         
         /// <summary>
-        /// btnImport control.
+        /// btnImportAll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnImport;
+        protected global::System.Web.UI.WebControls.Button btnImportAll;
+        
+        /// <summary>
+        /// btnImportHot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnImportHot;
+        
+        /// <summary>
+        /// btnImportSale control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnImportSale;
         
         /// <summary>
         /// txtSearch control.

@@ -80,10 +80,10 @@ namespace NgocHua.Admin
                 if (string.IsNullOrEmpty(fileImport.FileName))
                     return;
 
-                var source = SaveFile_ReturnData();
+                var source = SaveFile_ReturnData(null, null);
 
                 ShowError(source != null && source.Any()
-                    ? ImportData(source)
+                    ? ImportData(source, true)
                     : "Import Data is null");
 
                 grid.DataSource = _spRepository.FindByType(_type);
@@ -95,7 +95,51 @@ namespace NgocHua.Admin
             }
         }
 
-        public List<HangHoa> SaveFile_ReturnData()
+        protected void btnImportHot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(fileImport.FileName))
+                    return;
+
+                var source = SaveFile_ReturnData(true, null);
+
+                ShowError(source != null && source.Any()
+                    ? ImportData(source, false)
+                    : "Import Data is null");
+
+                grid.DataSource = _spRepository.FindByType(_type);
+                grid.DataBind();
+            }
+            catch (Exception ex)
+            {
+                ShowError(ex.Message);
+            }
+        }
+
+        protected void btnImportSale_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(fileImport.FileName))
+                    return;
+
+                var source = SaveFile_ReturnData(null, true);
+
+                ShowError(source != null && source.Any()
+                    ? ImportData(source, false)
+                    : "Import Data is null");
+
+                grid.DataSource = _spRepository.FindByType(_type);
+                grid.DataBind();
+            }
+            catch (Exception ex)
+            {
+                ShowError(ex.Message);
+            }
+        }
+
+        public List<HangHoa> SaveFile_ReturnData(bool? isHot, bool? isSale)
         {
             var savePath = Server.MapPath("~/App_Data/Temp/") + fileImport.FileName;
             if (!File.Exists(savePath))
@@ -105,7 +149,7 @@ namespace NgocHua.Admin
 
             var dataExcel = GetDataExcel(excel);
             var date = DateTime.Now;
-            var source = dataExcel.Select(x => GetData(x, date)).ToList();
+            var source = dataExcel.Select(x => GetData(x, date, isHot, isSale)).ToList();
             
             return source;
         }
@@ -123,11 +167,11 @@ namespace NgocHua.Admin
                     select p).ToList();
         }
 
-        public string ImportData(List<HangHoa> source)
+        public string ImportData(List<HangHoa> source, bool isDelete)
         {
             try
             {
-                _spRepository.Import(source);
+                _spRepository.Import(source, isDelete);
                 
                 return "Nhập dữ liệu mới thành công";
             }
@@ -137,7 +181,7 @@ namespace NgocHua.Admin
             }
         }
 
-        public HangHoa GetData(ExcelItem input, DateTime date)
+        public HangHoa GetData(ExcelItem input, DateTime date, bool? isHot, bool? isSale)
         {
             return new HangHoa
             {
@@ -147,7 +191,9 @@ namespace NgocHua.Admin
                 DonVi = input.DonVi,
                 SanXuat = input.SanXuat,
                 Gia = input.Gia,
-                CreatedDate = date
+                CreatedDate = date,
+                IsHot = isHot,
+                IsSale = isSale
             };
         }
 

@@ -8,5 +8,3 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="mainContent" runat="server">
     trang dat mua
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="footerContent" runat="server">
-</asp:Content>

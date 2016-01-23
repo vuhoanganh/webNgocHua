@@ -8,9 +8,10 @@ namespace Repository.Repository
     public class HangHoaRepository
     {
         private readonly NgocHuaDataDataContext _dataContext = new NgocHuaDataDataContext();
-        public void Import(List<HangHoa> items)
+        public void Import(List<HangHoa> items, bool isDelete)
         {
-            _dataContext.HangHoas.DeleteAllOnSubmit(_dataContext.HangHoas);
+            if (isDelete)
+                _dataContext.HangHoas.DeleteAllOnSubmit(_dataContext.HangHoas);
             _dataContext.HangHoas.InsertAllOnSubmit(items);
             _dataContext.SubmitChanges();
         }
@@ -33,6 +34,11 @@ namespace Repository.Repository
         public IEnumerable<HangHoa> GetAll()
         {
             return _dataContext.HangHoas.ToList();
+        }
+
+        public IEnumerable<HangHoa> GetAllOrderByDescending()
+        {
+            return _dataContext.HangHoas.OrderByDescending(x => x.Id).ToList();
         }
 
         public IEnumerable<HangHoa> GetByNew()
@@ -101,7 +107,7 @@ namespace Repository.Repository
         public IEnumerable<HangHoa> FindByType(string type, string key)
         {
             key = key.ToLower();
-            return FindByType(key).Where(x => x.Stt.ToString().Contains(key) || x.Ten.ToLower().Contains(key) 
+            return FindByType(key).Where(x => x.Stt.ToString().Contains(key) || x.Ten.ToLower().Contains(key)
             || x.Nhom.ToLower().Contains(key) || x.SanXuat.ToLower().Contains(key)).ToList();
         }
     }

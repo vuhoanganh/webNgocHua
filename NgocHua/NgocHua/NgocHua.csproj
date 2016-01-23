@@ -846,6 +846,7 @@
     <Content Include="css\settings-ie8.css" />
     <Content Include="css\settings.css" />
     <Content Include="css\style.css" />
+    <Content Include="ChonHang.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -879,6 +880,7 @@
     <Content Include="img\helpers\jquery.fancybox-media.js" />
     <Content Include="img\helpers\jquery.fancybox-thumbs.css" />
     <Content Include="img\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="img\infoAlert.png" />
     <Content Include="img\ios-buttons.png" />
     <Content Include="img\language-icons.png" />
     <Content Include="img\logo.png" />
@@ -1203,6 +1205,13 @@
       <DependentUpon>ChiTiet.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomTemplate\ItemSlideTemplate.cs" />
+    <Compile Include="ChonHang.aspx.cs">
+      <DependentUpon>ChonHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChonHang.aspx.designer.cs">
+      <DependentUpon>ChonHang.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GioHang.aspx.cs">
       <DependentUpon>GioHang.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1224,6 +1233,7 @@
     <Compile Include="Models\DataResponse.cs" />
     <Compile Include="Models\ExcelItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ItemInOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
@@ -1273,6 +1283,9 @@
       <Project>{6f688894-c715-497b-a8b5-60fd440158d2}</Project>
       <Name>Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -8,11 +8,17 @@
         <div style="float: left">
             <asp:FileUpload ID="fileImport" runat="server" /></div>
         <div style="float: left; margin-left: 20px;">
-            <asp:Button ID="btnImport" runat="server" CssClass="btn btn-primary" Text="Import" OnClick="btnImport_Click" />
+            <asp:Button ID="btnImportAll" runat="server" CssClass="btn btn-primary" Text="Nhập tất cả" OnClick="btnImport_Click" />
+        </div>
+        <div style="float: left; margin-left: 20px;">
+            <asp:Button ID="btnImportHot" runat="server" CssClass="btn btn-primary" Text="Nhập hàng bán chạy" OnClick="btnImport_Click" />
+        </div>
+        <div style="float: left; margin-left: 20px;">
+            <asp:Button ID="btnImportSale" runat="server" CssClass="btn btn-primary" Text="Nhập hàng giảm giá" OnClick="btnImport_Click" />
         </div>
         <div class="box-tools m-b-15">
             <div class="input-group">
-                <input type="text" id="txtSearch" name="table_search" class="form-control input-sm pull-right" style="width: 250px;" placeholder="Tìm kiếm" runat="server" />
+                <input type="text" id="txtSearch" name="table_search" class="form-control input-sm pull-right" style="width: 200px;" placeholder="Tìm kiếm" runat="server" />
                 <div class="input-group-btn">
                     <button class="btn btn-sm btn-default" runat="server" id="btnSearch" OnServerClick="btnSearch_OnServerClick"><i class="fa fa-search"></i></button>
                 </div>

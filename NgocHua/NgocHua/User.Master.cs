@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using NgocHua.Helper;
+﻿using NgocHua.Helper;
 using Repository.Repository;
+using System;
+using System.Linq;
+using Repository.Properties;
 
 namespace NgocHua
 {
     public partial class User : System.Web.UI.MasterPage
     {
         private readonly HangHoaRepository _spRepository = new HangHoaRepository();
+        private readonly UserRepository _userRepo = new UserRepository();
         private string _type;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,6 +20,20 @@ namespace NgocHua
             if (Page.IsPostBack) return;
 
             PrepareMenuRight();
+            loginPanel.Visible = true;
+            helloPanel.Visible = false;
+
+            if (Session["UserCus"] == null || Session["UserCus"].ToString() == "") return;
+
+            hdUser.Value = Session["UserCus"].ToString();
+            Session.Remove("UserCus");
+
+            var user = _userRepo.FindById(Convert.ToInt32(hdUser.Value));
+
+            loginPanel.Visible = !(user != null && user.Id > 0);
+            helloPanel.Visible = user != null && user.Id > 0;
+
+            lblUsername.Text = user != null && user.Id > 0 ? user.Fullname : string.Empty;
         }
 
         private void PrepareMenuRight()
@@ -42,6 +54,35 @@ namespace NgocHua
             }
 
             menuRight.InnerHtml = body;
+        }
+
+        protected void Page_Unload(object sender, EventArgs e)
+        {
+            Session["UserCus"] = hdUser.Value;
+        }
+
+        protected void btnLogin_OnServerClick(object sender, EventArgs e)
+        {
+            var user = _userRepo.Login(txtUsername.Value, txtPassword.Value);
+            if (user == null || user.Id == 0)
+            {
+                ShowError("Tên tài khoản hoặc mật khẩu không chính xác!");
+                return;
+            }
+
+            hdUser.Value = user.Id.ToString();
+            Response.Redirect(Request.RawUrl);
+        }
+
+        public void ShowError(string message)
+        {
+            RadWindowManager11.RadAlert(message, null, 120, "Message", null, "/img/infoAlert.png");
+        }
+
+        protected void btnLogout_OnClick(object sender, EventArgs e)
+        {
+            hdUser.Value = string.Empty;
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

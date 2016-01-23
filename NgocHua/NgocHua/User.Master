@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="NgocHua.User" %>
 
+<%@ Register TagPrefix="Telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2016.1.113.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,7 +40,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
         <!-- Container -->
         <div class="container">
 
@@ -54,7 +56,7 @@
 
                             <div id="logo" class="col-lg-4 col-md-4 col-sm-4">
                                 <a href="home_v1.html">
-                                    <img src="../img/logo.png" alt="Logo"/></a>
+                                    <img src="../../../../img/logo.png" alt="Logo" /></a>
                             </div>
 
                             <nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
@@ -78,33 +80,9 @@
                                                                 <a href="#" class="parent-color">Remove</a>
                                                             </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <img src="img/products/sample1.jpg" alt="product"></td>
-                                                            <td>
-                                                                <h6>Lorem ipsum dolor</h6>
-                                                                <p>Product code PSBJ3</p>
-                                                            </td>
-                                                            <td>
-                                                                <span class="quantity"><span class="light">1 x</span> $79.00</span>
-                                                                <a href="#" class="parent-color">Remove</a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <img src="img/products/sample1.jpg" alt="product"></td>
-                                                            <td>
-                                                                <h6>Lorem ipsum dolor</h6>
-                                                                <p>Product code PSBJ3</p>
-                                                            </td>
-                                                            <td>
-                                                                <span class="quantity"><span class="light">1 x</span> $79.00</span>
-                                                                <a href="#" class="parent-color">Remove</a>
-                                                            </td>
-                                                        </tr>
                                                     </table>
 
-                                                    <br class="clearfix">
+                                                    <br class="clearfix" />
                                                 </div>
 
                                                 <div class="footer">
@@ -131,45 +109,60 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="login-create purple">
-                                        <i class="icons icon-user"></i>
-                                        <p>
-                                            Hello Guest! <a href="#">Login</a> or<br>
-                                            <a href="#">Create Account</a>
-                                        </p>
-                                        <ul id="login-dropdown" class="box-dropdown">
-                                            <li>
-                                                <div class="box-wrapper">
-                                                    <h4>LOGIN</h4>
-                                                    <div class="iconic-input">
-                                                        <input type="text" placeholder="Username">
-                                                        <i class="icons icon-user-3"></i>
-                                                    </div>
-                                                    <div class="iconic-input">
-                                                        <input type="text" placeholder="Password">
-                                                        <i class="icons icon-lock"></i>
-                                                    </div>
-                                                    <input type="checkbox" id="loginremember">
-                                                    <label for="loginremember">Remember me</label>
-                                                    <br>
-                                                    <br>
-                                                    <div class="pull-left">
-                                                        <input type="submit" class="orange" value="Login">
-                                                    </div>
-                                                    <div class="pull-right">
-                                                        <a href="#">Forgot your password?</a>
+                                    <li>
+                                        <asp:Panel ID="loginPanel" runat="server">
+                                            <div class="login-create purple">
+                                                <i class="icons icon-user"></i>
+                                                <p>
+                                                    Xin chào! <a href="#">Đăng nhập</a> hoặc<br/>
+                                                    <a href="#">Tạo tài khoản</a>
+                                                </p>
+                                                <ul id="login-dropdown" class="box-dropdown">
+                                                    <li>
+                                                        <div class="box-wrapper">
+                                                            <h4>ĐĂNG NHẬP</h4>
+                                                            <div class="iconic-input">
+                                                                <input id="txtUsername" runat="server" type="text" placeholder="Tên tài khoản" />
+                                                                <i class="icons icon-user-3"></i>
+                                                            </div>
+                                                            <div class="iconic-input">
+                                                                <input id="txtPassword" runat="server" type="password" />
+                                                                <i class="icons icon-lock"></i>
+                                                            </div>
+                                                            <%--<input type="checkbox" id="loginremember">
+                                                    <label for="loginremember">Remember me</label>--%>
+                                                            <br />
+                                                            <br />
+                                                            <div class="pull-left">
+                                                                <input id="btnLogin" runat="server" type="submit" class="orange" value="Đăng nhập"
+                                                                    onserverclick="btnLogin_OnServerClick" />
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <%--<a href="#">Forgot your password?</a>
                                                         <br>
                                                         <a href="#">Forgot your username?</a>
-                                                        <br>
-                                                    </div>
-                                                    <br class="clearfix">
-                                                </div>
-                                                <div class="footer">
-                                                    <h4 class="pull-left">NEW CUSTOMER?</h4>
-                                                    <a class="button pull-right" href="create_an_account.html">Create an account</a>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                                        <br>--%>
+                                                            </div>
+                                                            <br class="clearfix" />
+                                                        </div>
+                                                        <div class="footer">
+                                                            <h4 class="pull-left">KHÁCH HÀNG MỚI?</h4>
+                                                            <a class="button pull-right" href="create_an_account.html">Tạo tài khoản</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </asp:Panel>
+                                        <asp:Panel ID="helloPanel" runat="server">
+                                            <div class="login-create purple">
+                                                <i class="icons icon-user"></i>
+                                                <p>
+                                                    Xin chào <asp:Label ID="lblUsername" runat="server"/>!<br/>
+                                                    <asp:LinkButton Text="Đăng xuất" ForeColor="#7a8188" ID="btnLogout" runat="server"
+                                                        OnClick="btnLogout_OnClick"/>
+                                                </p>
+                                            </div>
+                                        </asp:Panel>
                                     </li>
                                 </ul>
                             </nav>
@@ -194,36 +187,6 @@
                                 <a href="../../SanPham">
                                     <span class="nav-caption">Sản Phẩm</span>
                                 </a>
-
-                                <ul class="wide-dropdown normalAniamtion">
-                                    <li>
-                                        <ul>
-                                            <li><span class="nav-caption">Digital Cameras</span></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Digital SLR</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Point &amp; Shoot</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Spy, Miniature</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><span class="nav-caption">Digital Cameras</span></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Background Material</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Continuous Lighting</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Flash Lighting</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Light Meters</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><span class="nav-caption">Digital Cameras</span></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Batteries</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Cables &amp; Adapters</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Camcorder Tapes &amp; Discs</a></li>
-                                            <li><a href="#"><i class="icons icon-right-dir"></i>Cases, Bags &amp; Covers</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
                             </li>
 
                             <li class="blue">
@@ -321,7 +284,6 @@
 
                             <div class="sidebar-box-content">
                                 <ul id="menuRight" runat="server">
-                                    
                                 </ul>
                             </div>
 
@@ -338,11 +300,77 @@
 
 
             <!-- Footer -->
-            <footer id="footer" class="row">
+            <footer id="footer" class="row" style="margin-top: 50px">
 
                 <!-- Main Footer -->
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <asp:ContentPlaceHolder runat="server" ID="footerContent"/>
+                    <div id="main-footer">
+
+                        <div class="row">
+
+                            <!-- Information -->
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <h4>Information</h4>
+                                <ul>
+                                    <li><a href="#"><i class="icons icon-right-dir"></i>About Us</a></li>
+                                    <li><a href="#"><i class="icons icon-right-dir"></i>New Collection</a></li>
+                                    <li><a href="#"><i class="icons icon-right-dir"></i>Bestsellers</a></li>
+                                    <li><a href="#"><i class="icons icon-right-dir"></i>Manufacturers</a></li>
+                                    <li><a href="#"><i class="icons icon-right-dir"></i>Privacy Policy</a></li>
+                                    <li><a href="#"><i class="icons icon-right-dir"></i>Terms &amp; Conditions</a></li>
+                                </ul>
+                            </div>
+                            <!-- /Information -->
+
+
+                            <!-- Like us on Facebook -->
+                            <div class="col-lg-3 col-md-3 col-sm-6 facebook-iframe">
+                                <h4>Like us on Facebook</h4>
+
+                            </div>
+                            <!-- /Like us on Facebook -->
+
+
+                            <!-- Contact Us -->
+                            <div class="col-lg-3 col-md-3 col-sm-6 contact-footer-info">
+                                <h4>Contact Us</h4>
+                                <ul>
+                                    <li><i class="icons icon-location"></i>8901 Marmora Road, Glasgow, D04 89GR.</li>
+                                    <li><i class="icons icon-phone"></i>+1 800 603 6035</li>
+                                    <li><i class="icons icon-mail-alt"></i><a href="mailto:mail@company.com">mail@companyname.com</a></li>
+                                    <li><i class="icons icon-skype"></i>homeshop</li>
+                                </ul>
+
+                                <!-- Social Media -->
+                                <div class="social-media">
+                                    <ul>
+                                        <li class="social-googleplus tooltip-hover" data-toggle="tooltip" data-placement="top" title="Google+"><a href="#"></a></li>
+                                        <li class="social-facebook tooltip-hover" data-toggle="tooltip" data-placement="top" title="Facebook"><a href="#"></a></li>
+                                        <li class="social-pinterest tooltip-hover" data-toggle="tooltip" data-placement="top" title="Pinterest"><a href="#"></a></li>
+                                        <li class="social-twitter tooltip-hover" data-toggle="tooltip" data-placement="top" title="Twitter"><a href="#"></a></li>
+                                        <li class="social-youtube tooltip-hover" data-toggle="tooltip" data-placement="top" title="Youtube"><a href="#"></a></li>
+                                    </ul>
+                                </div>
+                                <!-- /Social Media -->
+
+                            </div>
+                            <!-- /Contact Us -->
+
+
+                            <!-- Newsletter -->
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <form id="newsletter" action="php/newsletter.php">
+                                    <h4>Newsletter Sign Up</h4>
+                                    <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
+                                    <input type="text" name="newsletter-email" placeholder="Enter your email address">
+                                    <input type="submit" name="newsletter-submit" value="Submit">
+                                </form>
+                            </div>
+                            <!-- /Newsletter -->
+
+                        </div>
+
+                    </div>
                 </div>
                 <!-- /Main Footer -->
 
@@ -359,6 +387,8 @@
 
         <div>
         </div>
+        <asp:HiddenField runat="server" ID="hdUser" />
+        <Telerik:RadWindowManager ID="RadWindowManager11" runat="server" />
     </form>
 
     <!-- JavaScript -->
