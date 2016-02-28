@@ -24,7 +24,17 @@ namespace NgocHua.Models
             Nhom = item.Nhom;
             SanXuat = item.SanXuat;
             Gia = item.Gia ?? 0;
-            SoLuong = 1;
+            SoLuong = 0;
+        }
+
+        public ItemInOrder(ChiTietHd item)
+        {
+            Id = item.Id;
+            Ten = item.HangHoa.Ten;
+            Nhom = item.HangHoa.Nhom;
+            SanXuat = item.HangHoa.SanXuat;
+            Gia = item.HangHoa.Gia ?? 0;
+            SoLuong = item.Quantity;
         }
     }
 }

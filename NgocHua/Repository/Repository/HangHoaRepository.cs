@@ -38,7 +38,7 @@ namespace Repository.Repository
 
         public IEnumerable<HangHoa> GetAllOrderByDescending()
         {
-            return _dataContext.HangHoas.OrderByDescending(x => x.Id).ToList();
+            return _dataContext.HangHoas.OrderByDescending(x => x.Id);
         }
 
         public IEnumerable<HangHoa> GetByNew()
@@ -60,8 +60,7 @@ namespace Repository.Repository
 
         public IEnumerable<HangHoa> Find(string key)
         {
-            var source = _dataContext.HangHoas.Where(x => x.Ten.Contains(key) || x.Nhom.Contains(key) || x.SanXuat.Contains(key));
-            return source.Any() ? source : GetAll();
+            return _dataContext.HangHoas.Where(x => x.Ten.Contains(key) || x.Nhom.Contains(key) || x.SanXuat.Contains(key));
         }
 
         public HangHoa Find(int key)

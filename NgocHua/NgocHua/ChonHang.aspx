@@ -2,6 +2,7 @@
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="Telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <style>
         .RadGrid_Metro .rgHeader, .RadGrid_Metro .rgHeader a {
             color: white !important;
@@ -33,6 +34,13 @@
             margin-bottom: 10px !important;
         }
     </style>
+    
+    <script type="text/javascript">
+        function saveAll(sender, args) {
+            var grid = $find('<%=grid.ClientID%>');
+            grid.get_batchEditingManager().saveChanges(grid.get_masterTableView());
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainSlide" runat="server">
 </asp:Content>
@@ -49,16 +57,30 @@
         <!-- /Heading -->
     </div>
 
+    <asp:Panel runat="server" DefaultButton="BtnSearch">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-lg-offset-6 col-md-offset-6 col-sm-offset-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm theo ..." id="TxtSearch" runat="server" />
+
+                    <span class="input-group-btn">
+                        <asp:Button CssClass="btn btn-default" ID="BtnSearch" runat="server"
+                            OnClick="BtnSearch_OnServerClick" Text="Tìm kiếm" />
+                    </span>
+                </div>
+                <!-- /input-group -->
+            </div>
+        </div>
+    </asp:Panel>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
 
             <Telerik:RadGrid ID="grid" OnNeedDataSource="grid_OnNeedDataSource" runat="server"
-                AllowSorting="True" AllowPaging="True"
-                OnBatchEditCommand="grid_OnBatchEditCommand"
-                PageSize="40" Skin="Metro">
-                <MasterTableView CommandItemDisplay="TopAndBottom" EditMode="Batch" AutoGenerateColumns="False" DataKeyNames="Id">
-                    <CommandItemSettings ShowSaveChangesButton="true" ShowAddNewRecordButton="False" ShowCancelChangesButton="False"
-                        SaveChangesText="Thêm vào giỏ hàng" ShowRefreshButton="False"/>
+                AllowSorting="False" AllowPaging="True"
+                OnBatchEditCommand="grid_OnBatchEditCommand" Skin="Metro" PageSize="50">
+                <MasterTableView CommandItemDisplay="None" EditMode="Batch" AutoGenerateColumns="False" DataKeyNames="Id">
+                    <CommandItemSettings ShowSaveChangesButton="False" ShowAddNewRecordButton="False" ShowCancelChangesButton="False"
+                        SaveChangesText="Thêm vào giỏ hàng" ShowRefreshButton="False" />
                     <Columns>
                         <Telerik:GridBoundColumn DataField="Nhom" HeaderText="Nhóm hàng hóa" UniqueName="Nhom" ReadOnly="True">
                             <HeaderStyle Width="100px" HorizontalAlign="Left"></HeaderStyle>
@@ -80,17 +102,16 @@
                             <HeaderStyle Width="50px" HorizontalAlign="Center"></HeaderStyle>
                             <ItemStyle Width="50px" HorizontalAlign="Center"></ItemStyle>
                         </Telerik:GridBoundColumn>
-                        <%--<Telerik:GridTemplateColumn UniqueName="EditCommandColumn">
+                        <Telerik:GridTemplateColumn>
+                            <HeaderStyle Width="100px" HorizontalAlign="Center"></HeaderStyle>
+                            <ItemStyle Width="100px" HorizontalAlign="Center"></ItemStyle>
                             <ItemTemplate>
-                                <asp:Button ID="BtnInsertOrder" Text="Mua" runat="server" OnClick="BtnInsertOrder_Click" />
+                                <button runat="server" onclick="saveAll()">Đặt hàng</button>
                             </ItemTemplate>
-                            <HeaderStyle Width="70px" HorizontalAlign="Center" />
-                            <ItemStyle Width="70px" HorizontalAlign="Center" />
-                        </Telerik:GridTemplateColumn>--%>
+                        </Telerik:GridTemplateColumn>
                     </Columns>
                 </MasterTableView>
             </Telerik:RadGrid>
-
         </div>
     </div>
 
@@ -101,7 +122,7 @@
                     <Telerik:AjaxUpdatedControl ControlID="grid" LoadingPanelID="loadingpanel" />
                 </UpdatedControls>
             </Telerik:AjaxSetting>
-            <Telerik:AjaxSetting AjaxControlID="BtnInsertOrder">
+            <Telerik:AjaxSetting AjaxControlID="BtnSearch">
                 <UpdatedControls>
                     <Telerik:AjaxUpdatedControl ControlID="grid" LoadingPanelID="loadingpanel" />
                 </UpdatedControls>

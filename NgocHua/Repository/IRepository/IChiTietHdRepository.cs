@@ -10,6 +10,7 @@ namespace Repository.IRepository
     public interface IChiTietHdRepository
     {
         string Add(ChiTietHd item);
+        string Update(ChiTietHd item);
         IEnumerable<ChiTietHd> FindByHd(int key);
     }
 }

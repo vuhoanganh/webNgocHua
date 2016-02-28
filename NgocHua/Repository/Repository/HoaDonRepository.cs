@@ -67,6 +67,10 @@ namespace Repository.Repository
         {
             try
             {
+                var entity = Find(item.Id);
+                entity.TamThoi = item.TamThoi;
+                entity.XacNhan = item.XacNhan;
+
                 _dataContext.SubmitChanges();
                 return null;
             }
