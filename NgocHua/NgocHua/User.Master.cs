@@ -26,7 +26,6 @@ namespace NgocHua
             if (Session["UserCus"] == null || Session["UserCus"].ToString() == "") return;
 
             hdUser.Value = Session["UserCus"].ToString();
-            Session.Remove("UserCus");
 
             var user = _userRepo.FindById(Convert.ToInt32(hdUser.Value));
 
@@ -58,6 +57,8 @@ namespace NgocHua
 
         protected void Page_Unload(object sender, EventArgs e)
         {
+            Session.Remove("UserCus");
+
             Session["UserCus"] = hdUser.Value;
         }
 

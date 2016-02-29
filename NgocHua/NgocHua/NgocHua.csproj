@@ -374,6 +374,7 @@
     <Content Include="Admin\css\throbber.gif" />
     <Content Include="Admin\css\timepicker\bootstrap-timepicker.css" />
     <Content Include="Admin\css\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Admin\ChiTietHd.aspx" />
     <Content Include="Admin\DonHang.aspx" />
     <Content Include="Admin\fonts\fontawesome-webfont.svg" />
     <Content Include="Admin\fonts\glyphicons-halflings-regular.svg" />
@@ -1165,6 +1166,13 @@
     </Compile>
     <Compile Include="Admin\ChiTiet.aspx.designer.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChiTietHd.aspx.cs">
+      <DependentUpon>ChiTietHd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChiTietHd.aspx.designer.cs">
+      <DependentUpon>ChiTietHd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\DonHang.aspx.cs">
       <DependentUpon>DonHang.aspx</DependentUpon>

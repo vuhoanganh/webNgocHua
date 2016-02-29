@@ -32,6 +32,11 @@ namespace Repository.Repository
             return _dataContext.HoaDons.ToList();
         }
 
+        public IEnumerable<HoaDon> GetAllByAdmin()
+        {
+            return _dataContext.HoaDons.Where(x => !x.TamThoi).OrderByDescending(x => x.Id).ThenBy(x => x.TamThoi).ToList();
+        }
+
         public HoaDon FindByUserAndTamThoi(int key)
         {
             return _dataContext.HoaDons.FirstOrDefault(x => x.TaiKhoanId == key && x.TamThoi);
