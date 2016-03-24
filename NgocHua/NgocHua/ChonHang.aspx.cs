@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using NgocHua.Models;
-using Repository.Model;
-using Repository.Repository;
+using NgocHua.Model;
+using NgocHua.Repository;
 using Telerik.Web.UI;
 
 namespace NgocHua

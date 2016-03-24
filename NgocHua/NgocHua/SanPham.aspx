@@ -44,7 +44,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="bannerItems" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="mainContent" runat="server">
-    <Telerik:RadScriptManager runat="server"></Telerik:RadScriptManager>
 
     <div class="row">
 

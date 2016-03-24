@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
-using Repository.Model;
-using Repository.Repository;
+using NgocHua.Model;
+using NgocHua.Repository;
+using System.IO;
 
 namespace NgocHua.Admin
 {
@@ -21,6 +22,7 @@ namespace NgocHua.Admin
         private void PrepareData()
         {
             var repo = new HangHoaRepository();
+            var repoImg = new HinhAnhRepository();
             var item = new HangHoa();
 
             if (!string.IsNullOrEmpty(hdId.Value))
@@ -35,15 +37,20 @@ namespace NgocHua.Admin
             txtGia.Value = Convert.ToDouble(item.Gia ?? 0);
             cboHot.Checked = item.IsHot == true;
             cboSale.Checked = item.IsSale == true;
+
+            var imgEntity = repoImg.Find(item.Id) ?? new HinhAnh();
+            if (imgEntity.Id > 0)
+                img.ImageUrl = "~/img/products/" + imgEntity.Url;
         }
 
         protected void btnSave_OnServerClick(object sender, EventArgs e)
         {
-            var repo = new HangHoaRepository();
+            var repoSp = new HangHoaRepository();
+            var repoImg = new HinhAnhRepository();
             var item = new HangHoa();
 
             if (!string.IsNullOrEmpty(hdId.Value))
-                item = repo.Find(Convert.ToInt32(hdId.Value));
+                item = repoSp.Find(Convert.ToInt32(hdId.Value));
 
             item.Nhom = txtNhom.Value;
             item.Ten = txtTen.Value;
@@ -53,7 +60,32 @@ namespace NgocHua.Admin
             item.IsHot = cboHot.Checked;
             item.IsSale = cboSale.Checked;
 
-            var message = item.Id > 0 ? repo.Update(item) : repo.Add(item);
+            var message = item.Id > 0 ? repoSp.Update(item) : repoSp.Add(item);
+
+            if (string.IsNullOrEmpty(fileImport.FileName))
+            {
+                ShowError(string.IsNullOrEmpty(message) ? "Lưu thành công" : message);
+                return;
+            }
+
+            var filename = fileImport.FileName.Split('.')[0];
+            var filetype = fileImport.FileName.Split('.')[1];
+            var imgName = filename + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + filetype;
+            var savePath = Server.MapPath("~/img/products/") + imgName;
+            fileImport.SaveAs(savePath);
+
+            img.ImageUrl = "~/img/products/" + imgName;
+
+            if (item.Id > 0)
+            {
+                var imgEntity = repoImg.Find(item.Id) ?? new HinhAnh();
+                imgEntity.Url = imgName;
+                imgEntity.HangHoaId = item.Id;
+                if(imgEntity.Id == 0)
+                    repoImg.Add(imgEntity);
+                else
+                    repoImg.Update(imgEntity);
+            }
 
             ShowError(string.IsNullOrEmpty(message) ? "Lưu thành công" : message);
         }
@@ -63,5 +95,16 @@ namespace NgocHua.Admin
             RadWindowManager1.RadAlert(message, null, 120, "Message", null, "/img/infoAlert.png");
         }
 
+        protected void fileImport_OnDataBinding(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(fileImport.FileName))
+                return;
+
+            var imgName = fileImport.FileName + "_" + DateTime.Now.ToString("yyyyMMddhhmmss");
+            var savePath = Server.MapPath("~/img/products/") + imgName;
+            fileImport.SaveAs(savePath);
+
+            img.ImageUrl = Server.MapPath("~/img/products/") + imgName;
+        }
     }
 }

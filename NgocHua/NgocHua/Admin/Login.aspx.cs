@@ -1,5 +1,5 @@
 ﻿using System;
-using Repository.Repository;
+using NgocHua.Repository;
 
 namespace NgocHua.Admin
 {

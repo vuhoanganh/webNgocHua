@@ -1,8 +1,7 @@
 ﻿using NgocHua.Helper;
-using Repository.Repository;
+using NgocHua.Repository;
 using System;
 using System.Linq;
-using Repository.Properties;
 
 namespace NgocHua
 {

@@ -2,20 +2,23 @@
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="Telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    Sản phẩm
+    <%--Sản phẩm--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
     <div class="panel-body table-responsive">
         <div style="float: left">
             <asp:FileUpload ID="fileImport" runat="server" /></div>
-        <div style="float: left; margin-left: 20px;">
+        <div style="float: left; margin-left: 10px;">
             <asp:Button ID="btnImportAll" runat="server" CssClass="btn btn-primary" Text="Nhập tất cả" OnClick="btnImport_Click" />
         </div>
-        <div style="float: left; margin-left: 20px;">
-            <asp:Button ID="btnImportHot" runat="server" CssClass="btn btn-primary" Text="Nhập hàng bán chạy" OnClick="btnImport_Click" />
+        <div style="float: left; margin-left: 10px;">
+            <asp:Button ID="btnImportPlus" runat="server" CssClass="btn btn-primary" Text="Nhập thêm" OnClick="btnImportPlus_OnClick" />
         </div>
-        <div style="float: left; margin-left: 20px;">
-            <asp:Button ID="btnImportSale" runat="server" CssClass="btn btn-primary" Text="Nhập hàng giảm giá" OnClick="btnImport_Click" />
+        <div style="float: left; margin-left: 10px;">
+            <asp:Button ID="btnImportHot" runat="server" CssClass="btn btn-primary" Text="Nhập hàng bán chạy" OnClick="btnImportHot_Click" />
+        </div>
+        <div style="float: left; margin-left: 10px;">
+            <asp:Button ID="btnImportSale" runat="server" CssClass="btn btn-primary" Text="Nhập hàng giảm giá" OnClick="btnImportSale_Click" />
         </div>
         <div class="box-tools m-b-15">
             <div class="input-group">

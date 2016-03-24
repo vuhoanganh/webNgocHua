@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using NgocHua.Models;
-using Repository.Model;
-using Repository.Repository;
+using NgocHua.Model;
+using NgocHua.Repository;
 using Telerik.Web.UI;
 
 namespace NgocHua

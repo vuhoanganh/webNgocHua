@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Repository.Repository;
+using NgocHua.Repository;
 
 namespace NgocHua
 {
@@ -35,8 +35,8 @@ namespace NgocHua
             #region Main Img
 
             var firstImg = imgSource.FirstOrDefault();
-            bodyImgMain = bodyImgMain.Replace("[IMG1]", firstImg != null && firstImg.Id > 0 ? firstImg.Url : noImg);
-            bodyImgMain = bodyImgMain.Replace("[IMG2]", firstImg != null && firstImg.Id > 0 ? firstImg.Url : noImg);
+            bodyImgMain = bodyImgMain.Replace("[IMG1]", firstImg != null && firstImg.Id > 0 ? "../../../img/products/" + firstImg.Url : noImg);
+            bodyImgMain = bodyImgMain.Replace("[IMG2]", firstImg != null && firstImg.Id > 0 ? "../../../img/products/" + firstImg.Url : noImg);
             imgMain.InnerHtml = bodyImgMain;
 
             #endregion

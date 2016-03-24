@@ -1,6 +1,6 @@
 ﻿using System;
 using NgocHua.CustomTemplate;
-using Repository.Repository;
+using NgocHua.Repository;
 
 namespace NgocHua
 {
@@ -35,8 +35,8 @@ namespace NgocHua
 
                 body = body.Replace("[SRC]", "img/products/single1.jpg");
                 body = body.Replace("[ALT]", item.Ten);
-                body = body.Replace("[HREF]", "SanPham/" + item.Id + "/" + item.Ten);
-                body = body.Replace("[HREF1]", "SanPham/" + item.Id + "/" + item.Ten);
+                body = body.Replace("[HREF]", "ChiTiet/" + item.Id + "/" + item.Ten);
+                body = body.Replace("[HREF1]", "ChiTiet/" + item.Id + "/" + item.Ten);
                 body = body.Replace("[NAME]", item.Ten);
                 body = body.Replace("[GIA]", item.Gia != null && (int)item.Gia.Value > 0 ? ((int)item.Gia.Value).ToString("n0") + " đ" : "Thương lượng");
             }

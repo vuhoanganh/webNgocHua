@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using LinqToExcel;
 using NgocHua.Models;
-using Repository.Model;
-using Repository.Repository;
+using NgocHua.Model;
+using NgocHua.Repository;
 using Telerik.Web.UI;
 using System.IO;
 
@@ -197,5 +197,26 @@ namespace NgocHua.Admin
             };
         }
 
+        protected void btnImportPlus_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(fileImport.FileName))
+                    return;
+
+                var source = SaveFile_ReturnData(null, null);
+
+                ShowError(source != null && source.Any()
+                    ? ImportData(source, false)
+                    : "Import Data is null");
+
+                grid.DataSource = _spRepository.FindByType(_type);
+                grid.DataBind();
+            }
+            catch (Exception ex)
+            {
+                ShowError(ex.Message);
+            }
+        }
     }
 }

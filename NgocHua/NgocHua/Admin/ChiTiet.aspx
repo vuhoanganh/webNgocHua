@@ -16,7 +16,8 @@
                             <label class="col-lg-2 col-sm-2 control-label">Stt</label>
                             <div class="col-lg-10">
                                 <p class="form-control-static">
-                                    <asp:Label runat="server" ID="lbStt" /></p>
+                                    <asp:Label runat="server" ID="lbStt" />
+                                </p>
                             </div>
                         </div>
                         <div class="form-group">
@@ -52,27 +53,35 @@
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Bán chạy</label>
                             <div class="col-sm-10">
-                                <input id="cboHot" type="checkbox" runat="server"/>
+                                <input id="cboHot" type="checkbox" runat="server" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Khuyến mãi</label>
                             <div class="col-sm-10">
-                                <input id="cboSale" type="checkbox" runat="server"/>
+                                <input id="cboSale" type="checkbox" runat="server" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Hình ảnh</label>
+                            <div class="col-sm-10">
+                                <asp:FileUpload ID="fileImport" AllowMultiple="False" runat="server"/>
+                                <div style="margin-top: 10px">
+                                    <asp:Image runat="server" ID="img" Width="300" /></div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <button onclick="back()" type="button" class="btn btn-default">Trở về</button>
                         </div>
                         <div class="col-sm-4">
-                            <button OnServerClick="btnSave_OnServerClick" id="btnSave" type="button" class="btn btn-primary" runat="server">Lưu</button>
+                            <button onserverclick="btnSave_OnServerClick" id="btnSave" type="button" class="btn btn-primary" runat="server">Lưu</button>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
     </div>
-    <asp:HiddenField runat="server" ID="hdId"/>
+    <asp:HiddenField runat="server" ID="hdId" />
     <Telerik:RadWindowManager ID="RadWindowManager1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptContent" runat="server">

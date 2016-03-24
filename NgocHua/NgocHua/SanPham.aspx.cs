@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using Repository.Repository;
+using NgocHua.Repository;
 using Telerik.Web.UI;
 using NgocHua.Helper;
-using Repository.Model;
+using NgocHua.Model;
 
 namespace NgocHua
 {

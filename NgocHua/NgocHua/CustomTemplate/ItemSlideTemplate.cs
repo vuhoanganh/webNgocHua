@@ -21,10 +21,11 @@ namespace NgocHua.CustomTemplate
             TemplateHtml += "<h5><a href='[HREF1]'>[NAME]</a></h5>";
             TemplateHtml += "<span class='price'>[GIA]</span></div>";
             TemplateHtml += "<div class='product-actions'>";
-            TemplateHtml += "<span class='add-to-cart'>";
-            TemplateHtml += "<span class='action-wrapper'>";
-            TemplateHtml += "<i class='icons icon-basket-2'></i>";
-            TemplateHtml += "<span class='action-name'>Thêm vào giỏ hàng</span></span></span></div></div>";
+            //TemplateHtml += "<span class='add-to-cart'>";
+            //TemplateHtml += "<span class='action-wrapper'>";
+            //TemplateHtml += "<i class='icons icon-basket-2'></i>";
+            //TemplateHtml += "<span class='action-name'>Thêm vào giỏ hàng</span></span></span></div></div>";
+            TemplateHtml += "</div></div>";
             TemplateHtml += "</div>";
         }
     }

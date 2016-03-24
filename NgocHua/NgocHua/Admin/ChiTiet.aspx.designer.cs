@@ -85,6 +85,24 @@ namespace NgocHua.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cboSale;
         
         /// <summary>
+        /// fileImport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileImport;
+        
+        /// <summary>
+        /// img control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img;
+        
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>
