@@ -13,7 +13,7 @@ namespace NgocHua.Admin
         protected void btnLogin_OnServerClick(object sender, EventArgs e)
         {
             var userRepo = new UserRepository();
-            var user = userRepo.Login(inputEmail1.Value, inputPassword1.Value);
+            var user = userRepo.Login(inputEmail1.Value, inputPassword1.Value, true);
             if (user == null || user.Id == 0)
                 return;
 

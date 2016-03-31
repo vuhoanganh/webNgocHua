@@ -141,6 +141,16 @@
                                 <i class="fa fa-globe"></i><span>Đơn hàng</span>
                             </a>
                         </li>
+                        <li id="liBanner" runat="server">
+                            <a href="../../Admin/HinhDong">
+                                <i class="fa fa-globe"></i><span>Hình banner</span>
+                            </a>
+                        </li>
+                        <li id="liLogo" runat="server">
+                            <a href="../../Admin/BannerLogo/logo">
+                                <i class="fa fa-globe"></i><span>Hình logo</span>
+                            </a>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->

@@ -3,8 +3,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="mainSlide">
-    <div class="flexslider flexsliderBig">
-        <ul class="slides">
+    <div class="flexslider flexsliderBig" runat="server" id="divSlide">
+        <li id="slide1" style="background: rgba(0, 0, 0, 0) url('[IMG]') no-repeat scroll 0 0">
+            <div class="text">
+
+                <div class="bg"></div>
+
+                <div class="title">
+                </div>
+
+                <div class="desc">
+                </div>
+
+                <div class="button">
+                </div>
+
+            </div>
+        </li>
+    </div>
+    <%--<ul class="slides">
             <li id="slide1">
                 <div class="text">
 
@@ -25,53 +42,11 @@
 
                 </div>
             </li>
-            <li id="slide2">
-                <div class="text">
-
-                    <div class="bg"></div>
-
-                    <div class="title">
-                        <h2><strong>The New Studio<br>
-                            Original Headphones</strong></h2>
-                    </div>
-
-                    <div class="desc">
-                        <h3>Lorem ipsum dolor</h3>
-                        <span>From <span class="price">$399.00</span></span>
-                    </div>
-
-                    <div class="button">
-                        <a class="button big red" href="#">Buy Now</a>
-                    </div>
-
-                </div>
-            </li>
-            <li id="slide3">
-                <div class="text">
-
-                    <div class="bg"></div>
-
-                    <div class="title">
-                        <h2>The New <strong>Laptop</strong></h2>
-                    </div>
-
-                    <div class="desc">
-                        <h3>All the power in your hands!</h3>
-                        <span>From <span class="price">$960.00</span></span>
-                    </div>
-
-                    <div class="button">
-                        <a class="button big red" href="#">Buy Now</a>
-                    </div>
-
-                </div>
-            </li>
-        </ul>
-    </div>
+        </ul>--%>
 </asp:Content>
 
 <asp:Content runat="server" ContentPlaceHolderID="bannerItems">
-    <div class="left-side-banner banner-item icon-on-right gray">
+    <%--<div class="left-side-banner banner-item icon-on-right gray">
         <h4>8(802)234-5678</h4>
         <p>Monday - Saturday: 8am - 5pm PST</p>
         <i class="icons icon-phone-outline"></i>
@@ -92,8 +67,7 @@
             <p>on selected items</p>
             <span class="button">Shop now</span>
         </div>
-    </a>
-
+    </a>--%>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
@@ -118,7 +92,6 @@
         <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
 
             <div class="owl-carousel" data-max-items="3" id="slideNew" runat="server">
-
             </div>
         </div>
         <!-- /Carousel -->
@@ -147,7 +120,6 @@
         <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
 
             <div class="owl-carousel" data-max-items="3" id="slideHot" runat="server">
-
             </div>
         </div>
         <!-- /Carousel -->
@@ -178,9 +150,8 @@
 
         <!-- Carousel -->
         <div class="carousel owl-carousel-wrap col-lg-12 col-md-12 col-sm-12">
-            
-            <div class="owl-carousel" data-max-items="3" id="slideSale" runat="server">
 
+            <div class="owl-carousel" data-max-items="3" id="slideSale" runat="server">
             </div>
         </div>
         <!-- /Carousel -->

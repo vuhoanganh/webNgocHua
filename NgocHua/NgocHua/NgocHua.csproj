@@ -192,6 +192,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\basic_form.html" />
+    <Content Include="Admin\BannerLogo.aspx" />
     <Content Include="Admin\ChiTiet.aspx" />
     <Content Include="Admin\css\bootstrap-slider\slider.css" />
     <Content Include="Admin\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
@@ -776,6 +777,7 @@
     <Content Include="Admin\js\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Admin\js\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\HinhDong.aspx" />
     <Content Include="Admin\SanPham.aspx" />
     <Content Include="Admin\simple.html" />
     <Content Include="assets\arrowleft.png" />
@@ -815,17 +817,11 @@
     <Content Include="assets\timerdot.png" />
     <Content Include="assets\transparent.jpg" />
     <Content Include="assets\white50.png" />
-    <Content Include="blog.html" />
-    <Content Include="blog_post.html" />
-    <Content Include="category_v1.html" />
-    <Content Include="category_v2.html" />
+    <Content Include="TaoTaiKhoan.aspx" />
     <Content Include="ChiTiet.aspx" />
-    <Content Include="compare_products.html" />
-    <Content Include="contact.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="create_an_account.html" />
     <Content Include="css\animation.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -952,7 +948,6 @@
     <Content Include="TrangDatMua.aspx" />
     <Content Include="twitter\jquery.tweet.js" />
     <Content Include="twitter\jquery.tweet.min.js" />
-    <Content Include="wishlist.html" />
     <Content Include="assets\arrows.psd" />
     <Content Include="assets\bullets.psd" />
     <Content Include="assets\small_arrows.psd" />
@@ -993,11 +988,6 @@
     </Content>
     <None Include="Properties\PublishProfiles\NgocHua v1.0.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="home_v3.html" />
-    <Content Include="orders_list.html" />
-    <Content Include="order_info.html" />
-    <Content Include="products_page_v1.html" />
-    <Content Include="products_page_v2.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1029,15 +1019,12 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="shopping_cart.html" />
-    <Content Include="text_page.html" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="twitter\162f88009c69dfe439b73801a4f1ae8b.json" />
     <Content Include="twitter\781ed235a4d1bc338cf3494e7cf3cbd8.json" />
@@ -1166,6 +1153,13 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\BannerLogo.aspx.cs">
+      <DependentUpon>BannerLogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BannerLogo.aspx.designer.cs">
+      <DependentUpon>BannerLogo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ChiTiet.aspx.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1201,6 +1195,13 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\HinhDong.aspx.cs">
+      <DependentUpon>HinhDong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HinhDong.aspx.designer.cs">
+      <DependentUpon>HinhDong.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1212,6 +1213,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="TaoTaiKhoan.aspx.cs">
+      <DependentUpon>TaoTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaoTaiKhoan.aspx.designer.cs">
+      <DependentUpon>TaoTaiKhoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ChiTiet.aspx.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

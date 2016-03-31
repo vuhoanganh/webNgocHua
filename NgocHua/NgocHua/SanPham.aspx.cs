@@ -55,6 +55,8 @@ namespace NgocHua
             Link = "../ChiTiet/" + item.Id + "/" + ConvertString.ConvertToUnSign3(item.Ten);
             Ten = item.Ten;
             Gia = item.Gia != null && item.Gia > 0 ? ((int) item.Gia.Value).ToString("n0") + " đ" : "Thương lượng";
+            var hinhAnh = item.HinhAnhs.FirstOrDefault();
+            if (hinhAnh != null) Img = "../../img/products/" + hinhAnh.Url;
         }
     }
 }

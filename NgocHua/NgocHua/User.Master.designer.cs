@@ -121,15 +121,6 @@ namespace NgocHua {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder bannerItems;
         
         /// <summary>
-        /// mainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainContent;
-        
-        /// <summary>
         /// menuRight control.
         /// </summary>
         /// <remarks>
@@ -137,6 +128,15 @@ namespace NgocHua {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuRight;
+        
+        /// <summary>
+        /// mainContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainContent;
         
         /// <summary>
         /// hdUser control.

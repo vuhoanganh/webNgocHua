@@ -84,9 +84,9 @@
 
             </LayoutTemplate>
             <ItemTemplate>
-                <div class="col-md-4" style="padding: 20px 15px">
+                <div class="col-md-4" style="padding: 10px">
                     <div class="product-image">
-                        <img src="<%# Eval("Img") %>" alt="Product1">
+                        <img src="<%# Eval("Img") %>" alt="Product1" width="270" height="270">
                         <a href="<%# Eval("Link") %>" class="product-hover">
                             <i class="icons icon-eye-1"></i>Xem nhanh
                         </a>
@@ -97,14 +97,6 @@
                         <span class="price"><%# Eval("Gia") %></span>
                     </div>
 
-                    <div class="product-actions">
-                        <span class="add-to-cart">
-                            <span class="action-wrapper">
-                                <i class="icons icon-basket-2"></i>
-                                <span class="action-name">Thêm vào giỏ hàng</span>
-                            </span>
-                        </span>
-                    </div>
                 </div>
             </ItemTemplate>
         </Telerik:RadListView>

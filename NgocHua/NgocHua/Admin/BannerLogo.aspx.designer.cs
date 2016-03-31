@@ -7,45 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NgocHua {
+namespace NgocHua.Admin {
     
     
-    public partial class TrangChu {
+    public partial class BannerLogo {
         
         /// <summary>
-        /// divSlide control.
+        /// lblHeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divSlide;
+        protected global::System.Web.UI.WebControls.Label lblHeader;
         
         /// <summary>
-        /// slideNew control.
+        /// fileBanner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl slideNew;
+        protected global::System.Web.UI.WebControls.FileUpload fileBanner;
         
         /// <summary>
-        /// slideHot control.
+        /// imgBanner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl slideHot;
+        protected global::System.Web.UI.WebControls.Image imgBanner;
         
         /// <summary>
-        /// slideSale control.
+        /// btnSaveBanner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl slideSale;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnSaveBanner;
+        
+        /// <summary>
+        /// hdId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdId;
+        
+        /// <summary>
+        /// RadWindowManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Telerik.Web.UI.RadWindowManager RadWindowManager1;
     }
 }

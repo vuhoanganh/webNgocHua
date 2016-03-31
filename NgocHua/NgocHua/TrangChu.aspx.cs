@@ -7,6 +7,7 @@ namespace NgocHua
     public partial class TrangChu : System.Web.UI.Page
     {
         private readonly HangHoaRepository _spRepository = new HangHoaRepository();
+        private readonly HinhAnhRepository _haRepository = new HinhAnhRepository();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,9 +18,22 @@ namespace NgocHua
 
         private void PrepareSlide()
         {
+            PrepareImgSlide();
             PrepareNewSlide();
             PrepareHotSlide();
             PrepareSaleSlide();
+        }
+
+        private void PrepareImgSlide()
+        {
+            var template = "<ul class='slides'>";
+            foreach (var img in _haRepository.FindList("Banner"))
+            {
+                var body = divSlide.InnerHtml;
+                template += body.Replace("[IMG]", "../img/" + img.Url);
+            }
+            template += "</ul>";
+            divSlide.InnerHtml = template;
         }
 
         private void PrepareNewSlide()

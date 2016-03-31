@@ -27,6 +27,21 @@ namespace NgocHua.Repository
             return _dataContext.HinhAnhs.FirstOrDefault(x => x.HangHoaId == key);
         }
 
+        public HinhAnh FindById(int key)
+        {
+            return _dataContext.HinhAnhs.FirstOrDefault(x => x.Id == key);
+        }
+
+        public HinhAnh Find(string key)
+        {
+            return _dataContext.HinhAnhs.FirstOrDefault(x => x.Ten == key);
+        }
+
+        public IQueryable<HinhAnh> FindList(string key)
+        {
+            return _dataContext.HinhAnhs.Where(x => x.Ten == key);
+        }
+
         public string Remove(int key)
         {
             try

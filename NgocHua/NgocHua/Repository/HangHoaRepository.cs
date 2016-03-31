@@ -11,7 +11,18 @@ namespace NgocHua.Repository
         public void Import(List<HangHoa> items, bool isDelete)
         {
             if (isDelete)
+            {
+                var hinhanhs = _dataContext.HinhAnhs.Where(x => x.Ten == null || (x.Ten != "Banner" && x.Ten != "Logo")).ToList();
+                _dataContext.HinhAnhs.DeleteAllOnSubmit(hinhanhs);
+                _dataContext.SubmitChanges();
+                _dataContext.ChiTietHds.DeleteAllOnSubmit(_dataContext.ChiTietHds);
+                _dataContext.SubmitChanges();
+                _dataContext.HoaDons.DeleteAllOnSubmit(_dataContext.HoaDons);
+                _dataContext.SubmitChanges();
                 _dataContext.HangHoas.DeleteAllOnSubmit(_dataContext.HangHoas);
+                _dataContext.SubmitChanges();
+            }
+
             _dataContext.HangHoas.InsertAllOnSubmit(items);
             _dataContext.SubmitChanges();
         }
