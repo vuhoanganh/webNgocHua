@@ -45,7 +45,7 @@ namespace NgocHua
 
         private void PrepareMenuRight()
         {
-            const string template = "<li><a href='sanpham/[href]' [class]>[name]</a></li>";
+            const string template = "<li><a href='../../../../../sanpham/[href]' [class]>[name]</a></li>";
             const string classSelected = "class='selected'";
             var body = "";
 

@@ -93,8 +93,8 @@
                     </div>
 
                     <div class="product-info">
-                        <h5><a href="<%# Eval("Link") %>"><%# Eval("Ten") %></a></h5>
-                        <span class="price"><%# Eval("Gia") %></span>
+                        <h5><a href="<%# Eval("Link") %>" style="color: red"><%# Eval("Ten") %></a></h5>
+                        <span><%# Eval("Gia") %></span>
                     </div>
 
                 </div>

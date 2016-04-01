@@ -67,10 +67,9 @@ namespace NgocHua.Admin
                 ShowError(string.IsNullOrEmpty(message) ? "Lưu thành công" : message);
                 return;
             }
-
-            var filename = fileImport.FileName.Split('.')[0];
+            
             var filetype = fileImport.FileName.Split('.')[1];
-            var imgName = filename + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + filetype;
+            var imgName = "img" + "_" + DateTime.Now.ToString("yyyyMMddhhmmss") + "." + filetype;
             var savePath = Server.MapPath("~/img/products/") + imgName;
             fileImport.SaveAs(savePath);
 

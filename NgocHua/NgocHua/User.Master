@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Title -->
-    <title>Ngoc Hua Shop</title>
+    <title>MÁY NÔNG NGHIỆP TÂY NGUYÊN</title>
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic' rel='stylesheet' type='text/css' />
@@ -67,7 +67,7 @@
                                             <div class="login-create purple">
                                                 <i class="icons icon-user"></i>
                                                 <p>
-                                                    Xin chào! <a href="#">Đăng nhập</a> hoặc<br/>
+                                                    Xin chào! <a href="#">Đăng nhập</a> hoặc<br />
                                                     <a href="#">Tạo tài khoản</a>
                                                 </p>
                                                 <ul id="login-dropdown" class="box-dropdown">
@@ -110,9 +110,10 @@
                                             <div class="login-create purple">
                                                 <i class="icons icon-user"></i>
                                                 <p>
-                                                    Xin chào <asp:Label ID="lblUsername" runat="server"/>!<br/>
+                                                    Xin chào
+                                                    <asp:Label ID="lblUsername" runat="server" />!<br />
                                                     <asp:LinkButton Text="Đăng xuất" ForeColor="#7a8188" ID="btnLogout" runat="server"
-                                                        OnClick="btnLogout_OnClick"/>
+                                                        OnClick="btnLogout_OnClick" />
                                                 </p>
                                             </div>
                                         </asp:Panel>
@@ -141,7 +142,7 @@
                                     <span class="nav-caption">Sản Phẩm</span>
                                 </a>
                             </li>
-                            
+
                             <li class="blue">
                                 <a href="../../ChonHang">
                                     <span class="nav-caption">Chọn Hàng</span>
@@ -160,7 +161,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-search" style="display: none;visibility: collapse">
+                            <li class="nav-search" style="display: none; visibility: collapse">
                                 <i class="icons icon-search-1"></i>
                             </li>
 
@@ -219,7 +220,7 @@
                     <asp:ContentPlaceHolder runat="server" ID="bannerItems" />
                 </section>
                 <!-- /Banner Items -->
-                
+
                 <!-- Sidebar -->
                 <aside class="sidebar left-side-banner col-lg-3 col-md-3 col-sm-3">
 
@@ -267,61 +268,22 @@
                         <div class="row">
 
                             <!-- Information -->
-                            <div class="col-lg-3 col-md-3 col-sm-6">
-                                <h4>Information</h4>
-                                <ul>
-                                    <li><a href="#"><i class="icons icon-right-dir"></i>About Us</a></li>
-                                    <li><a href="#"><i class="icons icon-right-dir"></i>New Collection</a></li>
-                                    <li><a href="#"><i class="icons icon-right-dir"></i>Bestsellers</a></li>
-                                    <li><a href="#"><i class="icons icon-right-dir"></i>Manufacturers</a></li>
-                                    <li><a href="#"><i class="icons icon-right-dir"></i>Privacy Policy</a></li>
-                                    <li><a href="#"><i class="icons icon-right-dir"></i>Terms &amp; Conditions</a></li>
-                                </ul>
+                            <div class="col-lg-9 col-md-9 col-sm-6">
+                                <b><h4>CÔNG TY TNHH MỘT THÀNH VIÊN MÁY NÔNG NGHIỆP TÂY NGUYÊN</h4></b>
+                                <br />
+                                Địa chỉ: Thôn Mỹ Yên, Xã Đức Minh, Huyện Đắk Mil, Đắk Nông
+                                <br/>
+                                Điện thoại: 05013.751.979 - Đường dây nóng: 0906.529.929
                             </div>
                             <!-- /Information -->
-
-
-                            <!-- Like us on Facebook -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 facebook-iframe">
-                                <h4>Like us on Facebook</h4>
-
-                            </div>
-                            <!-- /Like us on Facebook -->
-
-
-                            <!-- Contact Us -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 contact-footer-info">
-                                <h4>Contact Us</h4>
-                                <ul>
-                                    <li><i class="icons icon-location"></i>8901 Marmora Road, Glasgow, D04 89GR.</li>
-                                    <li><i class="icons icon-phone"></i>+1 800 603 6035</li>
-                                    <li><i class="icons icon-mail-alt"></i><a href="mailto:mail@company.com">mail@companyname.com</a></li>
-                                    <li><i class="icons icon-skype"></i>homeshop</li>
-                                </ul>
-
-                                <!-- Social Media -->
-                                <div class="social-media">
-                                    <ul>
-                                        <li class="social-googleplus tooltip-hover" data-toggle="tooltip" data-placement="top" title="Google+"><a href="#"></a></li>
-                                        <li class="social-facebook tooltip-hover" data-toggle="tooltip" data-placement="top" title="Facebook"><a href="#"></a></li>
-                                        <li class="social-pinterest tooltip-hover" data-toggle="tooltip" data-placement="top" title="Pinterest"><a href="#"></a></li>
-                                        <li class="social-twitter tooltip-hover" data-toggle="tooltip" data-placement="top" title="Twitter"><a href="#"></a></li>
-                                        <li class="social-youtube tooltip-hover" data-toggle="tooltip" data-placement="top" title="Youtube"><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                                <!-- /Social Media -->
-
-                            </div>
-                            <!-- /Contact Us -->
-
 
                             <!-- Newsletter -->
                             <div class="col-lg-3 col-md-3 col-sm-6">
                                 <form id="newsletter" action="php/newsletter.php">
-                                    <h4>Newsletter Sign Up</h4>
-                                    <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
-                                    <input type="text" name="newsletter-email" placeholder="Enter your email address">
-                                    <input type="submit" name="newsletter-submit" value="Submit">
+                                    <h4>Đăng kí nhận tin</h4>
+                                    <p>Nhận tin tức mới về sản phẩm và chương trình khuyến mãi!</p>
+                                    <input type="text" name="newsletter-email" placeholder="Nhập địa chỉ email của bạn">
+                                    <input type="submit" name="newsletter-submit" value="Đăng kí">
                                 </form>
                             </div>
                             <!-- /Newsletter -->

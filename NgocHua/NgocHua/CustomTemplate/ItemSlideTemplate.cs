@@ -14,12 +14,12 @@ namespace NgocHua.CustomTemplate
             TemplateHtml = "<div>";
             TemplateHtml += "<div class='product'>";
             TemplateHtml += "<div class='product-image'>";
-            TemplateHtml += "<img src='[SRC]' alt='[ALT]'>";
+            TemplateHtml += "<img src='[SRC]' alt='[ALT]' width='270' height='270'>";
             TemplateHtml += "<a href='[HREF]' class='product-hover'>";
             TemplateHtml += "<i class='icons icon-eye-1'></i>Xem nhanh</a></div>";
             TemplateHtml += "<div class='product-info'>";
-            TemplateHtml += "<h5><a href='[HREF1]'>[NAME]</a></h5>";
-            TemplateHtml += "<span class='price'>[GIA]</span></div>";
+            TemplateHtml += "<h5><a href='[HREF1]' style='color:red'>[NAME]</a></h5>";
+            TemplateHtml += "<span>[GIA]</span></div>";
             TemplateHtml += "<div class='product-actions'>";
             //TemplateHtml += "<span class='add-to-cart'>";
             //TemplateHtml += "<span class='action-wrapper'>";

@@ -23,8 +23,10 @@ namespace NgocHua.Admin
         {
             var repoImg = new HinhAnhRepository();
             var itemBanner = new HinhAnh();
+            int id;
+            int.TryParse(hdId.Value, out id);
             if (!string.IsNullOrEmpty(hdId.Value))
-                itemBanner = isLogo ? repoImg.Find("Logo") ?? new HinhAnh() : repoImg.FindById(Convert.ToInt32(hdId.Value)) ?? new HinhAnh();
+                itemBanner = isLogo ? repoImg.Find("Logo") ?? new HinhAnh() : repoImg.FindById(id) ?? new HinhAnh();
             if (itemBanner.Id != 0)
             {
                 imgBanner.ImageUrl = "~/img/" + itemBanner.Url;

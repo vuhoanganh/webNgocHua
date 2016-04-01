@@ -31,7 +31,7 @@
 
                 <div class="col-lg-7 col-md-7 col-sm-7 product-single-info">
 
-                    <h2 id="lblTen" runat="server"></h2>
+                    <h2 id="lblTen" runat="server" style="color: red"></h2>
                     <table>
                         <tr>
                             <td>Nhà Sản Xuất</td>
@@ -59,7 +59,7 @@
                         </tr>
                     </table>--%>
 
-                    <span class="price" id="lblGia" runat="server"></span>
+                    <span id="lblGia" runat="server"></span>
 
                     <table class="product-actions-single">
                         <%--<tr>

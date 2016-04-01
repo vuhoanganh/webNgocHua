@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using NgocHua.CustomTemplate;
 using NgocHua.Repository;
 
@@ -47,7 +48,7 @@ namespace NgocHua
             {
                 body += template;
 
-                body = body.Replace("[SRC]", "img/products/single1.jpg");
+                body = !item.HinhAnhs.Any() ? body.Replace("[SRC]", "../img/products/single1.jpg") : body.Replace("[SRC]", "../img/products/" + item.HinhAnhs.FirstOrDefault().Url);
                 body = body.Replace("[ALT]", item.Ten);
                 body = body.Replace("[HREF]", "ChiTiet/" + item.Id + "/" + item.Ten);
                 body = body.Replace("[HREF1]", "ChiTiet/" + item.Id + "/" + item.Ten);
@@ -69,7 +70,7 @@ namespace NgocHua
             {
                 body += template;
 
-                body = body.Replace("[SRC]", "img/products/single1.jpg");
+                body = !item.HinhAnhs.Any() ? body.Replace("[SRC]", "../img/products/single1.jpg") : body.Replace("[SRC]", "../img/products/" + item.HinhAnhs.FirstOrDefault().Url);
                 body = body.Replace("[ALT]", item.Ten);
                 body = body.Replace("[HREF]", "SanPham/" + item.Id + "/" + item.Ten);
                 body = body.Replace("[HREF1]", "SanPham/" + item.Id + "/" + item.Ten);
@@ -91,7 +92,7 @@ namespace NgocHua
             {
                 body += template;
 
-                body = body.Replace("[SRC]", "img/products/single1.jpg");
+                body = !item.HinhAnhs.Any() ? body.Replace("[SRC]", "../img/products/single1.jpg") : body.Replace("[SRC]", "../img/products/" + item.HinhAnhs.FirstOrDefault().Url);
                 body = body.Replace("[ALT]", item.Ten);
                 body = body.Replace("[HREF]", "SanPham/" + item.Id + "/" + item.Ten);
                 body = body.Replace("[HREF1]", "SanPham/" + item.Id + "/" + item.Ten);
