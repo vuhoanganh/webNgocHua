@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="ChiTiet.aspx.cs" Inherits="NgocHua.ChiTiet" %>
 
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2016.1.113.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .product-single .rigActiveImage img{
+            width: 345px !important;
+            height: 300px !important
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainSlide" runat="server">
 </asp:Content>
@@ -17,14 +25,13 @@
 
                 <!-- Product Images Carousel -->
                 <div class="col-lg-5 col-md-5 col-sm-5 product-single-image">
-
-                    <div id="product-slider">
-                        <ul class="slides" id="imgMain" runat="server">
-                            <li>
-                                <img class="cloud-zoom" src="[IMG1]" data-large="[IMG2]" alt="" />
-                            </li>
-                        </ul>
-                    </div>
+                    <telerik:RadImageGallery RenderMode="Lightweight" runat="server" ID="RadImageGallery1" DisplayAreaMode="Image"
+                        OnNeedDataSource="RadImageGallery1_OnNeedDataSource" Height="400"
+                        DataTitleField="Title" LoopItems="True"
+                        DataDescriptionField="Description"
+                        DataImageField="ImageData"
+                        DataThumbnailField="ThumbnailData">
+                    </telerik:RadImageGallery>
                 </div>
                 <!-- /Product Images Carousel -->
 
@@ -60,38 +67,6 @@
                     </table>--%>
 
                     <span id="lblGia" runat="server"></span>
-
-                    <table class="product-actions-single">
-                        <%--<tr>
-                            <td>Color:</td>
-                            <td>
-                                <select class="chosen-select">
-                                    <option>Red +$25.00</option>
-                                    <option>Red +$25.00</option>
-                                    <option>Red +$25.00</option>
-                                    <option>Red +$25.00</option>
-                                </select>
-                            </td>
-                        </tr>--%>
-                        <%--<tr>
-                            <td>Số lượng mua:</td>
-                            <td>
-                                <div class="numeric-input">
-                                    <input id="txtSoluong" type="text" value="1" runat="server" />
-                                    <span class="arrow-up"><i class="icons icon-up-dir"></i></span>
-                                    <span class="arrow-down"><i class="icons icon-down-dir"></i></span>
-                                </div>
-                                <a href="#">
-                                    <span class="add-to-cart">
-                                        <span class="action-wrapper">
-                                            <i class="icons icon-basket-2"></i>
-                                            <span class="action-name">Thêm vào giỏ hàng</span>
-                                        </span>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>--%>
-                    </table>
 
                     <div class="social-share">
                         <%--<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21" style="border: none; overflow: hidden; height: 21px; width: 100px;"></iframe>--%>
@@ -148,21 +123,11 @@
 
     </div>
 
+</asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="afterJs">
+    <script>
+        function changeImg(url) {
 
-
-    <!-- Product Buttons -->
-    <%--<div class="row button-row">
-
-        <div class="col-lg-5 col-md-5 col-sm-5">
-            <a class="button grey regular" href="#"><i class="icons icon-reply"></i>BACK TO: Computers &amp; Tablets</a>
-        </div>
-
-        <div class="col-lg-7 col-md-7 col-sm-7 align-right">
-            <a class="button grey regular" href="#"><i class="icons icon-left-dir"></i>PREVIOUS PRODUCT</a>
-            <a class="button grey regular right-icon" href="#">NEXT PRODUCT <i class="icons icon-right-dir"></i></a>
-        </div>
-
-    </div>--%>
-    <!-- /Product Buttons -->
-
+        }
+    </script>
 </asp:Content>

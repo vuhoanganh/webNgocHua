@@ -193,6 +193,11 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\basic_form.html" />
     <Content Include="Admin\BannerLogo.aspx" />
+    <Content Include="Admin\ChiTietUser.aspx" />
+    <Content Include="Admin\DoiMatKhau.aspx" />
+    <Content Include="Admin\HinhSp.aspx" />
+    <Content Include="Admin\Users.aspx" />
+    <Content Include="Admin\GioiThieu.aspx" />
     <Content Include="Admin\ChiTiet.aspx" />
     <Content Include="Admin\css\bootstrap-slider\slider.css" />
     <Content Include="Admin\css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
@@ -778,6 +783,7 @@
     <Content Include="Admin\js\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\HinhDong.aspx" />
+    <Content Include="Admin\DanhSachTrang.aspx" />
     <Content Include="Admin\SanPham.aspx" />
     <Content Include="Admin\simple.html" />
     <Content Include="assets\arrowleft.png" />
@@ -817,6 +823,7 @@
     <Content Include="assets\timerdot.png" />
     <Content Include="assets\transparent.jpg" />
     <Content Include="assets\white50.png" />
+    <Content Include="GioiThieu.aspx" />
     <Content Include="TaoTaiKhoan.aspx" />
     <Content Include="ChiTiet.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -1160,6 +1167,41 @@
     <Compile Include="Admin\BannerLogo.aspx.designer.cs">
       <DependentUpon>BannerLogo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ChiTietUser.aspx.cs">
+      <DependentUpon>ChiTietUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChiTietUser.aspx.designer.cs">
+      <DependentUpon>ChiTietUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DoiMatKhau.aspx.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DoiMatKhau.aspx.designer.cs">
+      <DependentUpon>DoiMatKhau.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HinhSp.aspx.cs">
+      <DependentUpon>HinhSp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HinhSp.aspx.designer.cs">
+      <DependentUpon>HinhSp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GioiThieu.aspx.cs">
+      <DependentUpon>GioiThieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GioiThieu.aspx.designer.cs">
+      <DependentUpon>GioiThieu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ChiTiet.aspx.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1202,6 +1244,13 @@
     <Compile Include="Admin\HinhDong.aspx.designer.cs">
       <DependentUpon>HinhDong.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\DanhSachTrang.aspx.cs">
+      <DependentUpon>DanhSachTrang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DanhSachTrang.aspx.designer.cs">
+      <DependentUpon>DanhSachTrang.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\SanPham.aspx.cs">
       <DependentUpon>SanPham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1213,6 +1262,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="GioiThieu.aspx.cs">
+      <DependentUpon>GioiThieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioiThieu.aspx.designer.cs">
+      <DependentUpon>GioiThieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\TrangRepository.cs" />
     <Compile Include="TaoTaiKhoan.aspx.cs">
       <DependentUpon>TaoTaiKhoan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

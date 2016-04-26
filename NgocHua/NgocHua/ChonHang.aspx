@@ -90,10 +90,10 @@
                             <HeaderStyle HorizontalAlign="Left"></HeaderStyle>
                             <ItemStyle HorizontalAlign="Left"></ItemStyle>
                         </Telerik:GridBoundColumn>
-                        <Telerik:GridBoundColumn DataField="SanXuat" HeaderText="Nhà sản xuất" UniqueName="SanXuat" ReadOnly="True">
+                        <%--<Telerik:GridBoundColumn DataField="SanXuat" HeaderText="Nhà sản xuất" UniqueName="SanXuat" ReadOnly="True">
                             <HeaderStyle Width="100px" HorizontalAlign="Left"></HeaderStyle>
                             <ItemStyle Width="100px" HorizontalAlign="Left"></ItemStyle>
-                        </Telerik:GridBoundColumn>
+                        </Telerik:GridBoundColumn>--%>
                         <Telerik:GridBoundColumn DataField="Gia" HeaderText="Giá" UniqueName="Gia" ReadOnly="True">
                             <HeaderStyle Width="80px" HorizontalAlign="Center"></HeaderStyle>
                             <ItemStyle Width="80px" HorizontalAlign="Center"></ItemStyle>

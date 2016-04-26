@@ -7,54 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NgocHua {
+namespace NgocHua.Admin {
     
     
-    public partial class ChiTiet {
+    public partial class HinhSp {
         
         /// <summary>
-        /// RadImageGallery1 control.
+        /// fileImport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadImageGallery RadImageGallery1;
+        protected global::System.Web.UI.WebControls.FileUpload fileImport;
         
         /// <summary>
-        /// lblTen control.
+        /// btnUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTen;
+        protected global::System.Web.UI.WebControls.Button btnUpload;
         
         /// <summary>
-        /// lblSanxuat control.
+        /// listofuploadedfiles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor lblSanxuat;
+        protected global::System.Web.UI.WebControls.Label listofuploadedfiles;
         
         /// <summary>
-        /// lblGia control.
+        /// grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblGia;
+        protected global::Telerik.Web.UI.RadGrid grid;
         
         /// <summary>
-        /// lblChitiet control.
+        /// RadWindowManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblChitiet;
+        protected global::Telerik.Web.UI.RadWindowManager RadWindowManager1;
     }
 }

@@ -19,12 +19,14 @@ namespace NgocHua
 
             if (Page.IsPostBack) return;
 
-            var list = _spRepository.GetAll().Select(x => x.Nhom).Distinct().OrderBy(x => x).ToList();
+            var listAll = _spRepository.GetAll().ToList();
+
+            var list = listAll.Select(x => x.Nhom).Distinct().OrderBy(x => x).ToList();
             var header = list.FirstOrDefault(x => ConvertString.ConvertToUnSign3(x) == _type);
             lbHeader.Text = header;
 
-            var source = _spRepository.GetAll().Where(x => ConvertString.ConvertToUnSign3(x.Nhom) == _type).ToList();
-            source = source.Any() ? source : _spRepository.GetAll().ToList();
+            var source = listAll.Where(x => ConvertString.ConvertToUnSign3(x.Nhom) == _type || ConvertString.ConvertToUnSign3(x.SanXuat) == _type).ToList();
+            source = source.Any() ? source : listAll.ToList();
             listView.DataSource = source.Select(x => new JsonHangHoa(x)).ToList();
             listView.DataBind();
         }

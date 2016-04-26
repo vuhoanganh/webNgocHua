@@ -17,16 +17,16 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic' rel='stylesheet' type='text/css' />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="css/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="css/fontello.css" />
-    <link rel="stylesheet" href="css/animation.css" />
-    <link rel="stylesheet" href="css/owl.carousel.css" />
-    <link rel="stylesheet" href="css/owl.theme.css" />
-    <link rel="stylesheet" href="css/chosen.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/css/fontello.css" />
+    <link rel="stylesheet" href="~/css/animation.css" />
+    <link rel="stylesheet" href="~/css/owl.carousel.css" />
+    <link rel="stylesheet" href="~/css/owl.theme.css" />
+    <link rel="stylesheet" href="~/css/chosen.css" />
 
     <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -141,6 +141,9 @@
                                 <a href="../../SanPham">
                                     <span class="nav-caption">Sản Phẩm</span>
                                 </a>
+                                <ul class="wide-dropdown normalAniamtion" id="navSp" runat="server">
+                                    <li><a href="../../../SanPham/[Id]"><span class="nav-caption">[Name]</span></a></li>
+                                </ul>
                             </li>
 
                             <li class="blue">
@@ -149,10 +152,19 @@
                                 </a>
                             </li>
 
-                            <li class="blue">
+                            <li class="green">
                                 <a href="../../GioHang">
                                     <span class="nav-caption">Giỏ Hàng</span>
                                 </a>
+                            </li>
+
+                            <li class="purple">
+                                <a href="#">
+                                    <span class="nav-caption">Giới Thiệu</span>
+                                </a>
+                                <ul class="wide-dropdown normalAniamtion" id="navGT" runat="server">
+                                    <li><a href="../../../GioiThieu/[Id]"><span class="nav-caption">[Name]</span></a></li>
+                                </ul>
                             </li>
 
                             <li class="orange">
@@ -161,7 +173,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-search" style="display: none; visibility: collapse">
+                            <li class="nav-search">
                                 <i class="icons icon-search-1"></i>
                             </li>
 
@@ -173,24 +185,13 @@
                                 <table id="search-bar-table">
                                     <tr>
                                         <td class="search-column-1">
-                                            <p><span class="grey">Popular Searches:</span> <a href="#">accessories</a>, <a href="#">audio</a>, <a href="#">camera</a>, <a href="#">phone</a>, <a href="#">storage</a>, <a href="#">more</a></p>
-                                            <input type="text" placeholder="Enter your keyword">
-                                        </td>
-                                        <td class="search-column-2">
-                                            <p class="align-right"><a href="#">Advanced Search</a></p>
-                                            <select class="chosen-select-search">
-                                                <option>All Categories</option>
-                                                <option>All Categories</option>
-                                                <option>All Categories</option>
-                                                <option>All Categories</option>
-                                                <option>All Categories</option>
-                                            </select>
+                                            <input type="text" placeholder="Nhập từ khóa tìm kiếm" id="txtSearch" runat="server"/>
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                             <div id="search-button">
-                                <input type="submit" value="">
+                                <asp:Button runat="server" ID="Button1" OnClick="btnSearch_OnClick" Width="70px"/>
                                 <i class="icons icon-search-1"></i>
                             </div>
                         </div>
@@ -269,10 +270,12 @@
 
                             <!-- Information -->
                             <div class="col-lg-9 col-md-9 col-sm-6">
-                                <b><h4>CÔNG TY TNHH MỘT THÀNH VIÊN MÁY NÔNG NGHIỆP TÂY NGUYÊN</h4></b>
+                                <b>
+                                    <h4>CÔNG TY TNHH MỘT THÀNH VIÊN MÁY NÔNG NGHIỆP TÂY NGUYÊN</h4>
+                                </b>
                                 <br />
                                 Địa chỉ: Thôn Mỹ Yên, Xã Đức Minh, Huyện Đắk Mil, Đắk Nông
-                                <br/>
+                                <br />
                                 Điện thoại: 05013.751.979 - Đường dây nóng: 0906.529.929
                             </div>
                             <!-- /Information -->
@@ -305,51 +308,50 @@
         </div>
         <!-- Container -->
 
-        <div>
-        </div>
         <asp:HiddenField runat="server" ID="hdUser" />
         <Telerik:RadWindowManager ID="RadWindowManager11" runat="server" />
-    </form>
 
     <!-- JavaScript -->
-    <script src="js/modernizr.min.js"></script>
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+    <script src="../../../../js/modernizr.min.js"></script>
+    <script src="../../../../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../../js/jquery.raty.min.js"></script>
 
     <!-- Scroll Bar -->
-    <script src="js/perfect-scrollbar.min.js"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js"></script>
 
     <!-- Cloud Zoom -->
-    <script src="js/zoomsl-3.0.min.js"></script>
+    <script src="../../../../js/zoomsl-3.0.min.js"></script>
 
     <!-- FancyBox -->
-    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="../../../../js/jquery.fancybox.pack.js"></script>
 
     <!-- jQuery REVOLUTION Slider  -->
-    <script type="text/javascript" src="js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="../../../../js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="../../../../js/jquery.themepunch.revolution.min.js"></script>
 
     <!-- FlexSlider -->
-    <script defer src="js/flexslider.min.js"></script>
+    <script defer src="../../../../js/flexslider.min.js"></script>
 
     <!-- IOS Slider -->
-    <script src="js/jquery.iosslider.min.js"></script>
+    <script src="../../../../js/jquery.iosslider.min.js"></script>
 
     <!-- noUi Slider -->
-    <script src="js/jquery.nouislider.min.js"></script>
+    <script src="../../../../js/jquery.nouislider.min.js"></script>
 
     <!-- Owl Carousel -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="../../../../js/owl.carousel.min.js"></script>
 
     <!-- Cloud Zoom -->
-    <script src="js/zoomsl-3.0.min.js"></script>
+    <script src="../../../../js/zoomsl-3.0.min.js"></script>
 
     <!-- SelectJS -->
-    <script src="js/chosen.jquery.min.js" type="text/javascript"></script>
+    <script src="../../../../js/chosen.jquery.min.js" type="text/javascript"></script>
 
     <!-- Main JS -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main-script.js"></script>
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/main-script.js"></script>
+        <asp:ContentPlaceHolder ID="afterJs" runat="server" />
+    </form>
 </body>
 </html>

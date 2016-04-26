@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Work\Publish\NgocHua\v1.0</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Work\Publish\NgocHua\v2.0</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Account/AddPhoneNumber.aspx">
@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2015 21:26:04</publishTime>
     </File>
     <File Include="Admin/Admin.Master">
-      <publishTime>03/28/2016 11:14:24</publishTime>
+      <publishTime>04/27/2016 00:04:31</publishTime>
     </File>
     <File Include="Admin/ajax/dashboard-boxrefresh-demo.php">
       <publishTime>01/09/2016 14:11:52</publishTime>
@@ -70,10 +70,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/09/2016 14:11:52</publishTime>
     </File>
     <File Include="Admin/ChiTiet.aspx">
-      <publishTime>03/24/2016 23:56:15</publishTime>
+      <publishTime>04/26/2016 22:24:11</publishTime>
     </File>
     <File Include="Admin/ChiTietHd.aspx">
       <publishTime>02/29/2016 14:18:05</publishTime>
+    </File>
+    <File Include="Admin/ChiTietUser.aspx">
+      <publishTime>04/26/2016 16:06:52</publishTime>
     </File>
     <File Include="Admin/css/bootstrap-slider/slider.css">
       <publishTime>01/09/2016 14:11:52</publishTime>
@@ -618,6 +621,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Admin/css/timepicker/bootstrap-timepicker.min.css">
       <publishTime>01/09/2016 14:11:53</publishTime>
     </File>
+    <File Include="Admin/DanhSachTrang.aspx">
+      <publishTime>04/26/2016 10:32:56</publishTime>
+    </File>
+    <File Include="Admin/DoiMatKhau.aspx">
+      <publishTime>04/26/2016 16:16:01</publishTime>
+    </File>
     <File Include="Admin/DonHang.aspx">
       <publishTime>02/29/2016 14:17:42</publishTime>
     </File>
@@ -663,8 +672,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Admin/general.html">
       <publishTime>01/09/2016 14:11:52</publishTime>
     </File>
+    <File Include="Admin/GioiThieu.aspx">
+      <publishTime>04/26/2016 13:58:10</publishTime>
+    </File>
     <File Include="Admin/HinhDong.aspx">
       <publishTime>03/28/2016 11:54:09</publishTime>
+    </File>
+    <File Include="Admin/HinhSp.aspx">
+      <publishTime>04/26/2016 22:34:39</publishTime>
     </File>
     <File Include="Admin/Home.aspx">
       <publishTime>01/10/2016 22:14:43</publishTime>
@@ -1893,6 +1908,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Admin/simple.html">
       <publishTime>01/09/2016 14:11:52</publishTime>
     </File>
+    <File Include="Admin/Users.aspx">
+      <publishTime>04/26/2016 16:10:32</publishTime>
+    </File>
     <File Include="assets/arrowleft.png">
       <publishTime>01/09/2016 14:40:18</publishTime>
     </File>
@@ -2098,7 +2116,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/14/2015 21:26:01</publishTime>
     </File>
     <File Include="bin/NgocHua.dll">
-      <publishTime>04/01/2016 15:26:51</publishTime>
+      <publishTime>04/27/2016 00:46:14</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>12/14/2015 21:26:09</publishTime>
@@ -2182,10 +2200,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/09/2016 14:40:18</publishTime>
     </File>
     <File Include="ChiTiet.aspx">
-      <publishTime>03/31/2016 14:56:49</publishTime>
+      <publishTime>04/26/2016 23:55:01</publishTime>
     </File>
     <File Include="ChonHang.aspx">
-      <publishTime>02/28/2016 17:19:21</publishTime>
+      <publishTime>04/26/2016 09:48:36</publishTime>
     </File>
     <File Include="compare_products.html">
       <publishTime>01/09/2016 14:40:18</publishTime>
@@ -2312,6 +2330,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="GioHang.aspx">
       <publishTime>02/28/2016 18:06:23</publishTime>
+    </File>
+    <File Include="GioiThieu.aspx">
+      <publishTime>04/26/2016 14:29:13</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>12/14/2015 21:25:52</publishTime>
@@ -2584,7 +2605,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/23/2016 21:11:38</publishTime>
     </File>
     <File Include="Model/NgocHuaData.dbml">
-      <publishTime>03/23/2016 14:48:18</publishTime>
+      <publishTime>04/26/2016 10:03:14</publishTime>
     </File>
     <File Include="orders_list.html">
       <publishTime>01/09/2016 14:40:18</publishTime>
@@ -2707,7 +2728,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/09/2016 14:40:18</publishTime>
     </File>
     <File Include="TaoTaiKhoan.aspx">
-      <publishTime>03/31/2016 10:35:45</publishTime>
+      <publishTime>04/26/2016 16:16:35</publishTime>
     </File>
     <File Include="text_page.html">
       <publishTime>01/09/2016 14:40:18</publishTime>
@@ -2743,7 +2764,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/09/2016 14:40:18</publishTime>
     </File>
     <File Include="User.Master">
-      <publishTime>04/01/2016 15:26:25</publishTime>
+      <publishTime>04/27/2016 00:09:12</publishTime>
     </File>
     <File Include="ViewSwitcher.ascx">
       <publishTime>12/14/2015 21:26:03</publishTime>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using NgocHua.Model;
 
@@ -15,6 +16,11 @@ namespace NgocHua.Repository
             return _dataContext.TaiKhoans.FirstOrDefault(x => x.Username == name && x.Password == pass && x.IsAdmin == isAdmin);
         }
 
+        public List<TaiKhoan> GetAll()
+        {
+            return _dataContext.TaiKhoans.ToList();
+        }
+
         public TaiKhoan FindById(int id)
         {
             return _dataContext.TaiKhoans.FirstOrDefault(x => x.Id == id);
@@ -23,6 +29,22 @@ namespace NgocHua.Repository
         public TaiKhoan FindByName(string name)
         {
             return _dataContext.TaiKhoans.FirstOrDefault(x => x.Username == name);
+        }
+
+        public string Remove(int key)
+        {
+            try
+            {
+                var item = FindById(key);
+                _dataContext.TaiKhoans.DeleteOnSubmit(item);
+                _dataContext.SubmitChanges();
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         public string Add(TaiKhoan item)
@@ -39,5 +61,17 @@ namespace NgocHua.Repository
             }
         }
 
+        public string Update(TaiKhoan item)
+        {
+            try
+            {
+                _dataContext.SubmitChanges();
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
     }
 }

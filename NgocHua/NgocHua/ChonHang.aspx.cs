@@ -27,6 +27,13 @@ namespace NgocHua
 
             if (Page.IsPostBack) return;
 
+            if (!string.IsNullOrEmpty(Session["Keywords"]?.ToString()))
+            {
+                var key = Session["Keywords"].ToString();
+                TxtSearch.Value = key;
+                ItemSource = _spRepository.Find(key).OrderByDescending(x => x.Id).Select(x => new ItemInOrder(x)).ToList();
+                Session.Remove("Keywords");
+            }
             grid.DataSource = ItemSource;
             grid.DataBind();
 

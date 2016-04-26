@@ -98,8 +98,8 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <input class="big" type="submit" value="Register" runat="server" OnServerClick="OnServerClick"/>
-                        <input class="big" type="reset" value="Cancel"/>
+                        <input class="big" type="submit" value="Đăng ký" runat="server" OnServerClick="OnServerClick"/>
+                        <input class="big" type="reset" value="Xóa thông tin"/>
                     </div>
 
                 </div>

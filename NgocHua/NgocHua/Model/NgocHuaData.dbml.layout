@@ -52,7 +52,7 @@
         <classShapeMoniker Id="f5614abd-e68c-49df-ac14-de72b3eda3de" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.60137491861979); (6.25 : 1.60137491861979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.60137491861979); (6.25 : 1.60137491861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/NgocHuaDataDataContext/HoaDon/HoaDon_ChiTietHd" />
       <nodes>
         <classShapeMoniker Id="c0d46c36-5c62-4a67-8e59-78526af65a05" />
@@ -66,5 +66,11 @@
         <classShapeMoniker Id="c0d46c36-5c62-4a67-8e59-78526af65a05" />
       </nodes>
     </associationConnector>
+    <classShape Id="113b01d3-0687-4bba-8861-c5b3c263ef4e" absoluteBounds="0.875, 4.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/NgocHuaDataDataContext/Page" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a418ae9-00bc-4d5f-b846-e40a4da10dec" absoluteBounds="0.89000000000000012, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

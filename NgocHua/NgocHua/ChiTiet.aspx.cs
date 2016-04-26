@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using NgocHua.Model;
 using NgocHua.Repository;
+using Telerik.Web.UI;
 
 namespace NgocHua
 {
@@ -18,6 +22,7 @@ namespace NgocHua
 
             if (_id <= 0)
                 Response.Redirect("~/SanPham");
+
             if (Page.IsPostBack) return;
 
             PrepareData();
@@ -25,22 +30,8 @@ namespace NgocHua
 
         private void PrepareData()
         {
-            var bodyImgMain = imgMain.InnerHtml;
-
             var item = _spRepository.Find(_id);
-            var imgSource = item.HinhAnhs.ToList();
 
-            const string noImg = "../../../img/products/single1.jpg";
-
-            #region Main Img
-
-            var firstImg = imgSource.FirstOrDefault();
-            bodyImgMain = bodyImgMain.Replace("[IMG1]", firstImg != null && firstImg.Id > 0 ? "../../../img/products/" + firstImg.Url : noImg);
-            bodyImgMain = bodyImgMain.Replace("[IMG2]", firstImg != null && firstImg.Id > 0 ? "../../../img/products/" + firstImg.Url : noImg);
-            imgMain.InnerHtml = bodyImgMain;
-
-            #endregion
-            
             #region Detail
             lblTen.InnerHtml = item.Ten;
             lblSanxuat.InnerHtml = item.SanXuat;
@@ -50,6 +41,33 @@ namespace NgocHua
             lblChitiet.InnerHtml = item.Ten;
 
             #endregion
+        }
+        
+        protected void RadImageGallery1_OnNeedDataSource(object sender, ImageGalleryNeedDataSourceEventArgs e)
+        {
+            var item = _spRepository.Find(_id);
+            var imgSource = item.HinhAnhs.ToList();
+            var gallery = sender as RadImageGallery;
+            if (gallery != null)
+                gallery.DataSource = GetImageGalleryData(imgSource);
+        }
+
+        private DataTable GetImageGalleryData(List<HinhAnh> imgSource)
+        {
+            var table = new DataTable();
+            table.Columns.Add("Title", typeof(string));
+            table.Columns.Add("Description", typeof(string));
+            table.Columns.Add("ImageData", typeof(string));
+            table.Columns.Add("ThumbnailData", typeof(string));
+
+            var plus = 0;
+            foreach (var img in imgSource)
+            {
+                plus++;
+                table.Rows.Add(string.Empty, string.Empty, "img/products/" + img.Url, "img/products/" + img.Url);
+            }
+
+            return table;
         }
     }
 }

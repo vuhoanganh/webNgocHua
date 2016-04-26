@@ -65,6 +65,9 @@
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">Hình ảnh</label>
                             <div class="col-sm-10">
+                                <button onserverclick="btnUpload_OnServerClick" type="button" class="btn btn-primary" runat="server">Upload Hình</button>
+                            </div>
+                            <div class="col-sm-10 hidden">
                                 <asp:FileUpload ID="fileImport" AllowMultiple="False" runat="server"/>
                                 <div style="margin-top: 10px">
                                     <asp:Image runat="server" ID="img" Width="300" /></div>

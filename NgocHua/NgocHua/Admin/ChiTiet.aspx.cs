@@ -43,6 +43,11 @@ namespace NgocHua.Admin
                 img.ImageUrl = "~/img/products/" + imgEntity.Url;
         }
 
+        protected void btnUpload_OnServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/HinhSp/" + hdId.Value);
+        }
+        
         protected void btnSave_OnServerClick(object sender, EventArgs e)
         {
             var repoSp = new HangHoaRepository();
