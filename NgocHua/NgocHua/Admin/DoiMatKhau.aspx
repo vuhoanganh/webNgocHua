@@ -1,13 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeBehind="DoiMatKhau.aspx.cs" Inherits="NgocHua.Admin.DoiMatKhau" %>
-<%@ Register TagPrefix="Telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2016.1.113.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="DoiMatKhau.aspx.cs" Inherits="NgocHua.Admin.DoiMatKhau" %>
 
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="Telerik" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--Sản phẩm--%>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="mainSlide" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="bannerItems" runat="server">
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="mainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="mainContent" runat="server">
 
     <div class="row">
 
