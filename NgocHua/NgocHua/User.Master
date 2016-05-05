@@ -59,16 +59,20 @@
                                 <a href="/TrangChu">
                                     <img src="../../../../img/logo.png" alt="Logo" /></a>
                             </div>
-
+                            
+                        
+                            
                             <nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
                                 <ul class="pull-right">
                                     <li>
+                                        
                                         <asp:Panel ID="loginPanel" runat="server">
                                             <div class="login-create purple">
                                                 <i class="icons icon-user"></i>
                                                 <p>
                                                     Xin chào! <a href="#">Đăng nhập</a> hoặc<br />
-                                                    <a href="#">Tạo tài khoản</a>
+                                                    <a href="#">Tạo tài khoản</a><br/>
+                                                    
                                                 </p>
                                                 <ul id="login-dropdown" class="box-dropdown">
                                                     <li>
@@ -120,9 +124,9 @@
                                     </li>
                                 </ul>
                             </nav>
-
+                            
                         </div>
-
+                        <a href="http://www.ngochua.com/GioiThieu/2">Hướng dẫn mua hàng</a>
                     </div>
                     <!-- /Main Header -->
 
