@@ -223,6 +223,28 @@
                 <!-- Banner Items -->
                 <section class="banner col-lg-12 col-md-12 col-sm-12">
                     <asp:ContentPlaceHolder runat="server" ID="bannerItems" />
+                    <div class="left-side-banner banner-item icon-on-right gray">
+						<h4>HOTLINE </h4>
+						<p>0906.529.929</p>
+						<i class="icons icon-phone-outline"></i>
+					</div>
+                    <a href="#">
+					<div class="middle-banner banner-item icon-on-left light-blue">
+						<h4>GIAO HÀNG NHANH</h4>
+						<p>Phục vụ tận tình</p>
+						<span class="button">Mua ngay</span>
+						<i class="icons icon-truck-1"></i>
+					</div>
+					</a>
+					
+					<a href="#">
+					<div class="right-side-banner banner-item orange">
+						<h4>SIÊU KHUYẾN MÃI</h4>
+						<p>Cam kết về chất lượng</p>
+						<span class="button">Mua ngay</span>
+					</div>
+					</a>
+					
                 </section>
                 <!-- /Banner Items -->
 
