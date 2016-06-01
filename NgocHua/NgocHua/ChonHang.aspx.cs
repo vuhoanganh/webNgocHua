@@ -19,13 +19,13 @@ namespace NgocHua
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack) return;
+
             if (Session["ChonHang"] == null && (ItemSource == null || !ItemSource.Any()))
                 ItemSource = _spRepository.GetAllOrderByDescending().Select(x => new ItemInOrder(x)).ToList();
             else
                 ItemSource = Session["ChonHang"] as List<ItemInOrder>;
             Session["ChonHang"] = ItemSource;
-
-            if (Page.IsPostBack) return;
 
             if (!string.IsNullOrEmpty(Session["Keywords"]?.ToString()))
             {
