@@ -166,6 +166,24 @@ namespace NgocHua {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuRight;
         
         /// <summary>
+        /// slidebar_right_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl slidebar_right_1;
+        
+        /// <summary>
+        /// slidebar_right_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl slidebar_right_2;
+        
+        /// <summary>
         /// mainContent control.
         /// </summary>
         /// <remarks>

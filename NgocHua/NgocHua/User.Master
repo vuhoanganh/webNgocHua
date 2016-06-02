@@ -270,7 +270,81 @@
 
                     </div>
                     <!-- /Categories -->
-
+                    
+					<!-- Carousel -->
+					<div class="row sidebar-box" runat="server" id="slidebar_right_1">
+						
+						<div class="col-lg-12 col-md-12 col-sm-12 sidebar-carousel">
+							
+							<!-- Slider -->
+							<section class="sidebar-slider">
+								<div class="sidebar-flexslider">
+									<ul class="slides">
+										<li>
+											<a href="[URL1]"><img src="img/[IMG1]" alt="Slide1"/></a>
+										</li>
+										<li>
+											<a href="[URL2]"><img src="img/[IMG2]" alt="Slide1"/></a>
+										</li>
+										<li>
+											<a href="[URL3]"><img src="img/[IMG3]" alt="Slide1"/></a>
+										</li>
+									</ul>
+								</div>
+								<div class="slider-nav"></div>
+							</section>
+							<!-- /Slider -->
+                            
+						</div>
+						
+					</div>
+					<!-- /Carousel -->
+					
+					<!-- Bestsellers -->
+					<div class="row sidebar-box red">
+						
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							
+							<div class="sidebar-box-heading">
+                            <i class="icons icon-award-2"></i>
+								<h4>Hàng bán chạy</h4>
+							</div>
+							
+							<div class="sidebar-box-content" runat="server" id="slidebar_right_2">
+								<table class="bestsellers-table">
+									
+									<tr>
+										<td class="product-thumbnail"><a href="[URL1]"><img src="img/[IMG1]" alt="Product1"></a></td>
+										<td class="product-info">
+											<p><a href="[URL1]"><span class="price">[NAME1]</span></a></p>
+											<span>[PRICE1]</span>
+										</td>
+									</tr>
+									
+									<tr>
+										<td class="product-thumbnail"><a href="[URL2]"><img src="img/[IMG2]" alt="Product1"></a></td>
+										<td class="product-info">
+											<p><a href="[URL2]"><span class="price">[NAME2]</span></a></p>
+											<span>[PRICE2]</span>
+										</td>
+									</tr>
+									
+									<tr>
+										<td class="product-thumbnail"><a href="[URL3]"><img src="img/[IMG3]" alt="Product1"></a></td>
+										<td class="product-info">
+											<p><a href="[URL3]"><span class="price">[NAME3]</span></a></p>
+											<span>[PRICE3]</span>
+										</td>
+									</tr>
+									
+								</table>
+							</div>
+							
+						</div>
+						
+					</div>
+					<!-- /Bestsellers -->
+					
                 </aside>
                 <!-- /Sidebar -->
 

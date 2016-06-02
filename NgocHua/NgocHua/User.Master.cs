@@ -24,7 +24,7 @@ namespace NgocHua
 
             if (Page.IsPostBack) return;
 
-            PrepareSlider();
+            PrepareSlidebarRight();
             PrepareMenuMain();
             PrepareMenuRight();
             loginPanel.Visible = true;
@@ -39,12 +39,7 @@ namespace NgocHua
 
             lblUsername.Text = user != null && user.Id > 0 ? user.Fullname : string.Empty;
         }
-
-        private void PrepareSlider()
-        {
-
-        }
-
+        
         private void PrepareMenuMain()
         {
             var template = navGT.InnerHtml;
@@ -103,6 +98,69 @@ namespace NgocHua
 
             menuRight.InnerHtml = bodyMenuRight;
             navSp.InnerHtml = bodyMenuSp;
+        }
+
+        private void PrepareSlidebarRight()
+        {
+            var listAll = _spRepository.GetAll().ToList();
+            var rnd = new Random();
+            var r1 = rnd.Next(listAll.Count);
+            var r2 = rnd.Next(listAll.Count);
+            var r3 = rnd.Next(listAll.Count);
+            var nameSign1 = ConvertString.ConvertToUnSign3(listAll[r1].Ten);
+            var nameSign2 = ConvertString.ConvertToUnSign3(listAll[r2].Ten);
+            var nameSign3 = ConvertString.ConvertToUnSign3(listAll[r3].Ten);
+            var img1 = listAll[r1].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+            var img2 = listAll[r2].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+            var img3 = listAll[r3].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+
+            slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[URL1]",
+                "../../../../../sanpham/" + nameSign1);
+            slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[IMG1]", !string.IsNullOrEmpty(img1.Url) ? img1.Url : "products/single1.jpg");
+
+            slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[URL2]",
+                "../../../../../sanpham/" + nameSign2);
+            slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[IMG2]", !string.IsNullOrEmpty(img2.Url) ? img2.Url : "products/single1.jpg");
+
+            slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[URL3]",
+                "../../../../../sanpham/" + nameSign3);
+            slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[IMG3]", !string.IsNullOrEmpty(img3.Url) ? img3.Url : "products/single1.jpg");
+
+
+            var r4 = rnd.Next(listAll.Count);
+            var r5 = rnd.Next(listAll.Count);
+            var r6 = rnd.Next(listAll.Count);
+            var nameSign4 = ConvertString.ConvertToUnSign3(listAll[r4].Ten);
+            var nameSign5 = ConvertString.ConvertToUnSign3(listAll[r5].Ten);
+            var nameSign6 = ConvertString.ConvertToUnSign3(listAll[r6].Ten);
+            var img4 = listAll[r4].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+            var img5 = listAll[r5].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+            var img6 = listAll[r6].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL1]",
+                "../../../../../sanpham/" + nameSign4);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL1]",
+                "../../../../../sanpham/" + nameSign4);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[IMG1]", !string.IsNullOrEmpty(img4.Url) ? img1.Url : "products/single1.jpg");
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[NAME1]", listAll[r4].Ten);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[PRICE1]", listAll[r4].Gia != null && (int)listAll[r4].Gia.Value > 0 ? ((int)listAll[r4].Gia.Value).ToString("n0") + " đ" : "Thương lượng");
+
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL2]",
+                "../../../../../sanpham/" + nameSign5);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL2]",
+                "../../../../../sanpham/" + nameSign5);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[IMG2]", !string.IsNullOrEmpty(img5.Url) ? img1.Url : "products/single1.jpg");
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[NAME2]", listAll[r5].Ten);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[PRICE2]", listAll[r5].Gia != null && (int)listAll[r5].Gia.Value > 0 ? ((int)listAll[r5].Gia.Value).ToString("n0") + " đ" : "Thương lượng");
+
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL3]",
+                "../../../../../sanpham/" + nameSign6);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL3]",
+                "../../../../../sanpham/" + nameSign6);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[IMG3]", !string.IsNullOrEmpty(img6.Url) ? img1.Url : "products/single1.jpg");
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[NAME3]", listAll[r6].Ten);
+            slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[PRICE3]", listAll[r6].Gia != null && (int)listAll[r6].Gia.Value > 0 ? ((int)listAll[r6].Gia.Value).ToString("n0") + " đ" : "Thương lượng");
+
         }
 
         protected void Page_Unload(object sender, EventArgs e)
