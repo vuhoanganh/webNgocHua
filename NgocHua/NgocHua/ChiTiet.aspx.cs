@@ -34,11 +34,11 @@ namespace NgocHua
 
             #region Detail
             lblTen.InnerHtml = item.Ten;
-            lblSanxuat.InnerHtml = item.SanXuat;
+            //lblSanxuat.InnerHtml = item.SanXuat;
             var gia = item.Gia != null && item.Gia.Value > 0 ? item.Gia.Value.ToString("n0") : "Thương lượng";
             lblGia.InnerHtml = item.IsSale != true ? gia : "<dev>" + gia + "</dev>";
 
-            lblChitiet.InnerHtml = item.Ten;
+            lblChitiet.InnerHtml = item.GhiChu;
 
             #endregion
         }

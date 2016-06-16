@@ -126,7 +126,6 @@
                             </nav>
                             
                         </div>
-                        <a href="http://www.ngochua.com/GioiThieu/2">Hướng dẫn mua hàng</a>
                     </div>
                     <!-- /Main Header -->
 
@@ -281,13 +280,13 @@
 								<div class="sidebar-flexslider">
 									<ul class="slides">
 										<li>
-											<a href="[URL1]"><img src="img/[IMG1]" alt="Slide1"/></a>
+											<a href="[URL1]"><img src="../../../img/[IMG1]" alt="Slide1"/></a>
 										</li>
 										<li>
-											<a href="[URL2]"><img src="img/[IMG2]" alt="Slide1"/></a>
+											<a href="[URL2]"><img src="../../../img/[IMG2]" alt="Slide1"/></a>
 										</li>
 										<li>
-											<a href="[URL3]"><img src="img/[IMG3]" alt="Slide1"/></a>
+											<a href="[URL3]"><img src="../../../img/[IMG3]" alt="Slide1"/></a>
 										</li>
 									</ul>
 								</div>
@@ -314,7 +313,7 @@
 								<table class="bestsellers-table">
 									
 									<tr>
-										<td class="product-thumbnail"><a href="[URL1]"><img src="img/[IMG1]" alt="Product1"></a></td>
+										<td class="product-thumbnail"><a href="[URL1]"><img src="../../../img/[IMG1]" alt="Product1"></a></td>
 										<td class="product-info">
 											<p><a href="[URL1]"><span class="price">[NAME1]</span></a></p>
 											<span>[PRICE1]</span>
@@ -322,7 +321,7 @@
 									</tr>
 									
 									<tr>
-										<td class="product-thumbnail"><a href="[URL2]"><img src="img/[IMG2]" alt="Product1"></a></td>
+										<td class="product-thumbnail"><a href="[URL2]"><img src="../../../img/[IMG2]" alt="Product1"></a></td>
 										<td class="product-info">
 											<p><a href="[URL2]"><span class="price">[NAME2]</span></a></p>
 											<span>[PRICE2]</span>
@@ -330,7 +329,7 @@
 									</tr>
 									
 									<tr>
-										<td class="product-thumbnail"><a href="[URL3]"><img src="img/[IMG3]" alt="Product1"></a></td>
+										<td class="product-thumbnail"><a href="[URL3]"><img src="../../../img/[IMG3]" alt="Product1"></a></td>
 										<td class="product-info">
 											<p><a href="[URL3]"><span class="price">[NAME3]</span></a></p>
 											<span>[PRICE3]</span>

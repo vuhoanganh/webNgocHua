@@ -39,20 +39,20 @@
                 <div class="col-lg-7 col-md-7 col-sm-7 product-single-info">
 
                     <h2 id="lblTen" runat="server" style="color: red"></h2>
-                    <table>
+                    <%--<table>
                         <tr>
                             <td>Nhà Sản Xuất</td>
                             <td><a href="#" id="lblSanxuat" runat="server"></a></td>
                         </tr>
-                        <%--<tr>
+                        <tr>
                             <td>Availability</td>
                             <td><span class="green">in stock</span> 20 items</td>
-                        </tr>--%>
-                        <%--<tr>
+                        </tr>
+                        <tr>
                             <td>Product code</td>
                             <td>PBS173</td>
-                        </tr>--%>
-                    </table>
+                        </tr>
+                    </table>--%>
 
                     <%-- <strong>Product Dimensions</strong>
                     <table>

@@ -64,7 +64,7 @@
 
         <div class="col-lg-12 col-md-12 col-sm-12">
             <Telerik:RadDataPager ID="RadDataPager1" runat="server" PagedControlID="listView"
-                PageSize="15" Skin="MetroTouch" CssClass="pull-right">
+                PageSize="12" Skin="MetroTouch" CssClass="pull-right">
                 <Fields>
                     <Telerik:RadDataPagerButtonField FieldType="FirstPrev" />
                     <Telerik:RadDataPagerButtonField FieldType="Numeric" PageButtonCount="5" />
@@ -84,7 +84,7 @@
 
             </LayoutTemplate>
             <ItemTemplate>
-                <div class="col-md-4" style="padding: 10px">
+                <div class="col-md-4" style="padding: 10px;height: 380px">
                     <div class="product-image">
                         <img src="<%# Eval("Img") %>" alt="Product1" width="270" height="270">
                         <a href="<%# Eval("Link") %>" class="product-hover">
@@ -92,7 +92,7 @@
                         </a>
                     </div>
 
-                    <div class="product-info">
+                    <div class="product-info" style="height: 90px">
                         <h5><a href="<%# Eval("Link") %>" style="color: red"><%# Eval("Ten") %></a></h5>
                         <span><%# Eval("Gia") %></span>
                     </div>
@@ -108,7 +108,7 @@
 
         <div class="col-lg-12 col-md-12 col-sm-12">
             <Telerik:RadDataPager ID="RadDataPager2" runat="server" PagedControlID="listView"
-                PageSize="15" Skin="MetroTouch" CssClass="pagination">
+                PageSize="12" Skin="MetroTouch" CssClass="pagination">
                 <Fields>
                     <Telerik:RadDataPagerButtonField FieldType="FirstPrev" />
                     <Telerik:RadDataPagerButtonField FieldType="Numeric" PageButtonCount="5" />

@@ -34,6 +34,7 @@ namespace NgocHua.Admin
             txtTen.Value = item.Ten;
             txtDonVi.Value = item.DonVi;
             txtSanXuat.Value = item.SanXuat;
+            txtGhiChu.Content = item.GhiChu;
             txtGia.Value = Convert.ToDouble(item.Gia ?? 0);
             cboHot.Checked = item.IsHot == true;
             cboSale.Checked = item.IsSale == true;
@@ -64,6 +65,7 @@ namespace NgocHua.Admin
             item.Gia = (decimal?)txtGia.Value;
             item.IsHot = cboHot.Checked;
             item.IsSale = cboSale.Checked;
+            item.GhiChu = txtGhiChu.Content;
 
             var message = item.Id > 0 ? repoSp.Update(item) : repoSp.Add(item);
 

@@ -186,7 +186,7 @@ namespace NgocHua.Admin
             return new HangHoa
             {
                 Stt = input.Stt,
-                Nhom = input.Nhom,
+                Nhom = !string.IsNullOrEmpty(input.Nhom.Trim()) ? input.Nhom : "Loại khác",
                 Ten = input.Ten,
                 DonVi = input.DonVi,
                 SanXuat = input.SanXuat,

@@ -20,12 +20,6 @@
         <elementListCompartment Id="6320ca52-739d-415a-89d8-b142511f447e" absoluteBounds="8.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="433aafe2-e3bc-45c3-a22b-254021e9b158" absoluteBounds="3.5, 4.875, 2, 2.7324039713541666">
-      <DataClassMoniker Name="/NgocHuaDataDataContext/HangHoa" />
-      <nestedChildShapes>
-        <elementListCompartment Id="60f5f13a-afc1-49de-b813-96f16255afe3" absoluteBounds="3.515, 5.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f5614abd-e68c-49df-ac14-de72b3eda3de" absoluteBounds="6.25, 5.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/NgocHuaDataDataContext/HinhAnh" />
       <nestedChildShapes>
@@ -38,20 +32,6 @@
         <elementListCompartment Id="fdfb37f1-4a0a-4b5d-8476-bcecdf5b9761" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 4.875); (5.875 : 4.5); (5.875 : 2.20274983723958); (6.25 : 2.20274983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/NgocHuaDataDataContext/HangHoa/HangHoa_ChiTietHd" />
-      <nodes>
-        <classShapeMoniker Id="433aafe2-e3bc-45c3-a22b-254021e9b158" />
-        <classShapeMoniker Id="d1077297-a1b8-4af0-8f76-cac48c6478c7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.16429768880208); (6.25 : 6.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/NgocHuaDataDataContext/HangHoa/HangHoa_HinhAnh" />
-      <nodes>
-        <classShapeMoniker Id="433aafe2-e3bc-45c3-a22b-254021e9b158" />
-        <classShapeMoniker Id="f5614abd-e68c-49df-ac14-de72b3eda3de" />
-      </nodes>
-    </associationConnector>
     <associationConnector edgePoints="[(5.5 : 1.60137491861979); (6.25 : 1.60137491861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/NgocHuaDataDataContext/HoaDon/HoaDon_ChiTietHd" />
       <nodes>
@@ -72,5 +52,25 @@
         <elementListCompartment Id="5a418ae9-00bc-4d5f-b846-e40a4da10dec" absoluteBounds="0.89000000000000012, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="1211197c-dccb-4d83-a277-ff2ff5eb195a" absoluteBounds="3.375, 4.25, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/NgocHuaDataDataContext/HangHoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f270a9ab-ec1d-47f7-8fb3-f9d2379f51ae" absoluteBounds="3.39, 4.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 4.25); (5.75 : 3.875); (7.25 : 3.875); (7.25 : 3.28049967447917)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NgocHuaDataDataContext/HangHoa/HangHoa_ChiTietHd" />
+      <nodes>
+        <classShapeMoniker Id="1211197c-dccb-4d83-a277-ff2ff5eb195a" />
+        <classShapeMoniker Id="d1077297-a1b8-4af0-8f76-cac48c6478c7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 6.16429768880208); (6.25 : 6.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/NgocHuaDataDataContext/HangHoa/HangHoa_HinhAnh" />
+      <nodes>
+        <classShapeMoniker Id="1211197c-dccb-4d83-a277-ff2ff5eb195a" />
+        <classShapeMoniker Id="f5614abd-e68c-49df-ac14-de72b3eda3de" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

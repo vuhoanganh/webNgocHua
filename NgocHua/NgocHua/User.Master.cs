@@ -103,16 +103,20 @@ namespace NgocHua
         private void PrepareSlidebarRight()
         {
             var listAll = _spRepository.GetAll().ToList();
+            var listHaveImg = listAll.Where(x => x.HinhAnhs.Any()).ToList();
             var rnd = new Random();
-            var r1 = rnd.Next(listAll.Count);
-            var r2 = rnd.Next(listAll.Count);
-            var r3 = rnd.Next(listAll.Count);
-            var nameSign1 = ConvertString.ConvertToUnSign3(listAll[r1].Ten);
-            var nameSign2 = ConvertString.ConvertToUnSign3(listAll[r2].Ten);
-            var nameSign3 = ConvertString.ConvertToUnSign3(listAll[r3].Ten);
-            var img1 = listAll[r1].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
-            var img2 = listAll[r2].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
-            var img3 = listAll[r3].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+            var r1 = listHaveImg.Any() ? rnd.Next(listHaveImg.Count) : rnd.Next(listAll.Count);
+            var r2 = listHaveImg.Any() ? rnd.Next(listHaveImg.Count) : rnd.Next(listAll.Count);
+            var r3 = listHaveImg.Any() ? rnd.Next(listHaveImg.Count) : rnd.Next(listAll.Count);
+            var item1 = listHaveImg.Any() ? listHaveImg[r1] : listAll[r1];
+            var item2 = listHaveImg.Any() ? listHaveImg[r2] : listAll[r2];
+            var item3 = listHaveImg.Any() ? listHaveImg[r3] : listAll[r3];
+            var nameSign1 = ConvertString.ConvertToUnSign3(item1.Ten);
+            var nameSign2 = ConvertString.ConvertToUnSign3(item2.Ten);
+            var nameSign3 = ConvertString.ConvertToUnSign3(item3.Ten);
+            var img1 = item1.HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+            var img2 = item2.HinhAnhs.FirstOrDefault() ?? new HinhAnh();
+            var img3 = item3.HinhAnhs.FirstOrDefault() ?? new HinhAnh();
 
             slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[URL1]",
                 "../../../../../sanpham/" + nameSign1);

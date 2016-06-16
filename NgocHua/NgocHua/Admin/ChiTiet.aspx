@@ -38,7 +38,7 @@
                                 <input id="txtDonVi" type="text" class="form-control" runat="server" />
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="visibility: collapse;display: none">
                             <label class="col-sm-2 col-sm-2 control-label">Nhà sản xuất</label>
                             <div class="col-sm-10">
                                 <input id="txtSanXuat" type="text" class="form-control" runat="server" />
@@ -71,6 +71,14 @@
                                 <asp:FileUpload ID="fileImport" AllowMultiple="False" runat="server"/>
                                 <div style="margin-top: 10px">
                                     <asp:Image runat="server" ID="img" Width="300" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Ghi chú</label>
+                            <div class="col-sm-10">
+                                <telerik:RadEditor ID="txtGhiChu" runat="server" RenderMode="Lightweight" Height="675px">
+                                    <ImageManager EnableAsyncUpload="False"></ImageManager>
+                                </telerik:RadEditor>
                             </div>
                         </div>
                         <div class="col-sm-4">
