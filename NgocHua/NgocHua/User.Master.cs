@@ -119,15 +119,15 @@ namespace NgocHua
             var img3 = item3.HinhAnhs.FirstOrDefault() ?? new HinhAnh();
 
             slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[URL1]",
-                "../../../../../sanpham/" + nameSign1);
+                "../../../../../ChiTiet/" + item1.Id + "/" + item1.Ten);
             slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[IMG1]", !string.IsNullOrEmpty(img1.Url) ? img1.Url : "products/single1.jpg");
 
             slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[URL2]",
-                "../../../../../sanpham/" + nameSign2);
+                "../../../../../ChiTiet/" + item2.Id + "/" + item2.Ten);
             slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[IMG2]", !string.IsNullOrEmpty(img2.Url) ? img2.Url : "products/single1.jpg");
 
             slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[URL3]",
-                "../../../../../sanpham/" + nameSign3);
+                "../../../../../ChiTiet/" + item3.Id + "/" + item3.Ten);
             slidebar_right_1.InnerHtml = slidebar_right_1.InnerHtml.Replace("[IMG3]", !string.IsNullOrEmpty(img3.Url) ? img3.Url : "products/single1.jpg");
 
 
@@ -142,25 +142,25 @@ namespace NgocHua
             var img6 = listAll[r6].HinhAnhs.FirstOrDefault() ?? new HinhAnh();
 
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL1]",
-                "../../../../../sanpham/" + nameSign4);
+                "../../../../../ChiTiet/" + listAll[r4].Id + "/" + listAll[r4].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL1]",
-                "../../../../../sanpham/" + nameSign4);
+                "../../../../../ChiTiet/" + listAll[r4].Id + "/" + listAll[r4].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[IMG1]", !string.IsNullOrEmpty(img4.Url) ? img1.Url : "products/single1.jpg");
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[NAME1]", listAll[r4].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[PRICE1]", listAll[r4].Gia != null && (int)listAll[r4].Gia.Value > 0 ? ((int)listAll[r4].Gia.Value).ToString("n0") + " đ" : "Thương lượng");
 
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL2]",
-                "../../../../../sanpham/" + nameSign5);
+                "../../../../../ChiTiet/" + listAll[r5].Id + "/" + listAll[r5].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL2]",
-                "../../../../../sanpham/" + nameSign5);
+                "../../../../../ChiTiet/" + listAll[r5].Id + "/" + listAll[r5].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[IMG2]", !string.IsNullOrEmpty(img5.Url) ? img1.Url : "products/single1.jpg");
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[NAME2]", listAll[r5].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[PRICE2]", listAll[r5].Gia != null && (int)listAll[r5].Gia.Value > 0 ? ((int)listAll[r5].Gia.Value).ToString("n0") + " đ" : "Thương lượng");
 
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL3]",
-                "../../../../../sanpham/" + nameSign6);
+                "../../../../../ChiTiet/" + listAll[r6].Id + "/" + listAll[r6].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[URL3]",
-                "../../../../../sanpham/" + nameSign6);
+                "../../../../../ChiTiet/" + listAll[r6].Id + "/" + listAll[r6].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[IMG3]", !string.IsNullOrEmpty(img6.Url) ? img1.Url : "products/single1.jpg");
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[NAME3]", listAll[r6].Ten);
             slidebar_right_2.InnerHtml = slidebar_right_2.InnerHtml.Replace("[PRICE3]", listAll[r6].Gia != null && (int)listAll[r6].Gia.Value > 0 ? ((int)listAll[r6].Gia.Value).ToString("n0") + " đ" : "Thương lượng");
