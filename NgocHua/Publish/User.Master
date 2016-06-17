@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="NgocHua.User" %>
 
-<%@ Register TagPrefix="Telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2016.1.113.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
+<%@ register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
 
 <!DOCTYPE html>
 
