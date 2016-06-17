@@ -1,0 +1,485 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="NgocHua.User" %>
+
+<%@ Register TagPrefix="Telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2016.1.113.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title>MÁY NÔNG NGHIỆP TÂY NGUYÊN</title>
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,900,700italic,500italic' rel='stylesheet' type='text/css' />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/css/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/css/fontello.css" />
+    <link rel="stylesheet" href="~/css/animation.css" />
+    <link rel="stylesheet" href="~/css/owl.carousel.css" />
+    <link rel="stylesheet" href="~/css/owl.theme.css" />
+    <link rel="stylesheet" href="~/css/chosen.css" />
+
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<link rel="stylesheet" href="css/ie.css">
+        <![endif]-->
+    <!--[if IE 7]>
+			<link rel="stylesheet" href="css/fontello-ie7.css">
+		<![endif]-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Header -->
+            <header class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                    <!-- Main Header -->
+                    <div id="main-header">
+
+                        <div class="row">
+
+                            <div id="logo" class="col-lg-4 col-md-4 col-sm-4">
+                                <a href="/TrangChu">
+                                    <img src="../../../../img/logo.png" alt="Logo" /></a>
+                            </div>
+                            
+                        
+                            
+                            <nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
+                                <ul class="pull-right">
+                                    <li>
+                                        
+                                        <asp:Panel ID="loginPanel" runat="server">
+                                            <div class="login-create purple">
+                                                <i class="icons icon-user"></i>
+                                                <p>
+                                                    Xin chào! <a href="#">Đăng nhập</a> hoặc<br />
+                                                    <a href="#">Tạo tài khoản</a><br/>
+                                                    
+                                                </p>
+                                                <ul id="login-dropdown" class="box-dropdown">
+                                                    <li>
+                                                        <div class="box-wrapper">
+                                                            <h4>ĐĂNG NHẬP</h4>
+                                                            <div class="iconic-input">
+                                                                <input id="txtUsername" runat="server" type="text" placeholder="Tên tài khoản" />
+                                                                <i class="icons icon-user-3"></i>
+                                                            </div>
+                                                            <div class="iconic-input">
+                                                                <input id="txtPassword" runat="server" type="password" />
+                                                                <i class="icons icon-lock"></i>
+                                                            </div>
+                                                            <%--<input type="checkbox" id="loginremember">
+                                                    <label for="loginremember">Remember me</label>--%>
+                                                            <br />
+                                                            <br />
+                                                            <div class="pull-left">
+                                                                <input id="btnLogin" runat="server" type="submit" class="orange" value="Đăng nhập"
+                                                                    onserverclick="btnLogin_OnServerClick" />
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <%--<a href="#">Forgot your password?</a>
+                                                        <br>
+                                                        <a href="#">Forgot your username?</a>
+                                                        <br>--%>
+                                                            </div>
+                                                            <br class="clearfix" />
+                                                        </div>
+                                                        <div class="footer">
+                                                            <h4 class="pull-left">KHÁCH HÀNG MỚI?</h4>
+                                                            <a class="button pull-right" href="../TaoTaiKhoan">Tạo tài khoản</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </asp:Panel>
+                                        <asp:Panel ID="helloPanel" runat="server">
+                                            <div class="login-create purple">
+                                                <i class="icons icon-user"></i>
+                                                <p>
+                                                    Xin chào
+                                                    <asp:Label ID="lblUsername" runat="server" />!<br />
+                                                    <asp:LinkButton Text="Đăng xuất" ForeColor="#7a8188" ID="btnLogout" runat="server"
+                                                        OnClick="btnLogout_OnClick" />
+                                                </p>
+                                            </div>
+                                        </asp:Panel>
+                                    </li>
+                                </ul>
+                            </nav>
+                            
+                        </div>
+                    </div>
+                    <!-- /Main Header -->
+
+
+                    <!-- Main Navigation -->
+                    <nav id="main-navigation" class="style3">
+                        <ul>
+
+                            <li class="home-green current-item">
+                                <a href="../../TrangChu">
+                                    <span class="nav-caption">Trang Chủ</span>
+                                </a>
+                            </li>
+
+                            <li class="red">
+                                <a href="../../SanPham">
+                                    <span class="nav-caption">Sản Phẩm</span>
+                                </a>
+                                <ul class="wide-dropdown normalAniamtion" id="navSp" runat="server">
+                                    <li><a href="../../../SanPham/[Id]"><span class="nav-caption">[Name]</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="blue">
+                                <a href="../../ChonHang">
+                                    <span class="nav-caption">Chọn Hàng</span>
+                                </a>
+                            </li>
+
+                            <li class="green">
+                                <a href="../../GioHang">
+                                    <span class="nav-caption">Giỏ Hàng</span>
+                                </a>
+                            </li>
+
+                            <li class="purple">
+                                <a href="#">
+                                    <span class="nav-caption">Giới Thiệu</span>
+                                </a>
+                                <ul class="wide-dropdown normalAniamtion" id="navGT" runat="server">
+                                    <li><a href="../../../GioiThieu/[Id]"><span class="nav-caption">[Name]</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="orange">
+                                <a href="../../LienHe">
+                                    <span class="nav-caption">Liên Hệ</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-search">
+                                <i class="icons icon-search-1"></i>
+                            </li>
+
+                        </ul>
+
+                        <div id="search-bar">
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <table id="search-bar-table">
+                                    <tr>
+                                        <td class="search-column-1">
+                                            <input type="text" placeholder="Nhập từ khóa tìm kiếm" id="txtSearch" runat="server"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="search-button">
+                                <asp:Button runat="server" ID="Button1" OnClick="btnSearch_OnClick" Width="70px"/>
+                                <i class="icons icon-search-1"></i>
+                            </div>
+                        </div>
+
+                    </nav>
+                    <!-- /Main Navigation -->
+
+                </div>
+
+            </header>
+            <!-- /Header -->
+
+
+            <!-- Content -->
+            <div class="row content">
+
+
+                <!-- Slider -->
+                <section class="slider col-lg-12 col-md-12 col-sm-12">
+                    <asp:ContentPlaceHolder ID="mainSlide" runat="server" />
+                </section>
+                <!-- /Slider -->
+
+
+                <!-- Banner Items -->
+                <section class="banner col-lg-12 col-md-12 col-sm-12">
+                    <asp:ContentPlaceHolder runat="server" ID="bannerItems" />
+                    <div class="left-side-banner banner-item icon-on-right gray">
+						<h4>HOTLINE </h4>
+						<p>0906.529.929</p>
+						<i class="icons icon-phone-outline"></i>
+					</div>
+                    <a href="#">
+					<div class="middle-banner banner-item icon-on-left light-blue">
+						<h4>GIAO HÀNG NHANH</h4>
+						<p>Phục vụ tận tình</p>
+						<span class="button">Mua ngay</span>
+						<i class="icons icon-truck-1"></i>
+					</div>
+					</a>
+					
+					<a href="#">
+					<div class="right-side-banner banner-item orange">
+						<h4>SIÊU KHUYẾN MÃI</h4>
+						<p>Cam kết về chất lượng</p>
+						<span class="button">Mua ngay</span>
+					</div>
+					</a>
+					
+                </section>
+                <!-- /Banner Items -->
+
+                <!-- Sidebar -->
+                <aside class="sidebar left-side-banner col-lg-3 col-md-3 col-sm-3">
+
+                    <!-- Categories -->
+                    <div class="row sidebar-box purple">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+
+                            <div class="sidebar-box-heading">
+                                <i class="icons icon-folder-open-empty"></i>
+                                <h4>Sản Phẩm</h4>
+                            </div>
+
+                            <div class="sidebar-box-content">
+                                <ul id="menuRight" runat="server">
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /Categories -->
+                    
+					<!-- Carousel -->
+					<div class="row sidebar-box" runat="server" id="slidebar_right_1">
+						
+						<div class="col-lg-12 col-md-12 col-sm-12 sidebar-carousel">
+							
+							<!-- Slider -->
+							<section class="sidebar-slider">
+								<div class="sidebar-flexslider">
+									<ul class="slides">
+										<li>
+											<a href="[URL1]"><img src="../../../img/[IMG1]" alt="Slide1"/></a>
+										</li>
+										<li>
+											<a href="[URL2]"><img src="../../../img/[IMG2]" alt="Slide1"/></a>
+										</li>
+										<li>
+											<a href="[URL3]"><img src="../../../img/[IMG3]" alt="Slide1"/></a>
+										</li>
+									</ul>
+								</div>
+								<div class="slider-nav"></div>
+							</section>
+							<!-- /Slider -->
+                            
+						</div>
+						
+					</div>
+					<!-- /Carousel -->
+					
+					<!-- Bestsellers -->
+					<div class="row sidebar-box red">
+						
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							
+							<div class="sidebar-box-heading">
+                            <i class="icons icon-award-2"></i>
+								<h4>Hàng bán chạy</h4>
+							</div>
+							
+							<div class="sidebar-box-content" runat="server" id="slidebar_right_2">
+								<table class="bestsellers-table">
+									
+									<tr>
+										<td class="product-thumbnail"><a href="[URL1]"><img src="../../../img/[IMG1]" alt="Product1"></a></td>
+										<td class="product-info">
+											<p><a href="[URL1]"><span class="price">[NAME1]</span></a></p>
+											<span>[PRICE1]</span>
+										</td>
+									</tr>
+									
+									<tr>
+										<td class="product-thumbnail"><a href="[URL2]"><img src="../../../img/[IMG2]" alt="Product1"></a></td>
+										<td class="product-info">
+											<p><a href="[URL2]"><span class="price">[NAME2]</span></a></p>
+											<span>[PRICE2]</span>
+										</td>
+									</tr>
+									
+									<tr>
+										<td class="product-thumbnail"><a href="[URL3]"><img src="../../../img/[IMG3]" alt="Product1"></a></td>
+										<td class="product-info">
+											<p><a href="[URL3]"><span class="price">[NAME3]</span></a></p>
+											<span>[PRICE3]</span>
+										</td>
+									</tr>
+									
+								</table>
+							</div>
+							
+						</div>
+						
+					</div>
+					<!-- /Bestsellers -->
+					
+                </aside>
+                <!-- /Sidebar -->
+
+                <!-- Main Content -->
+                <section class="main-content col-lg-9 col-md-9 col-sm-9">
+                    <asp:ContentPlaceHolder ID="mainContent" runat="server" />
+                </section>
+                <!-- /Main Content -->
+
+
+            </div>
+            <!-- /Content -->
+
+
+            <!-- Footer -->
+            <footer id="footer" class="row" style="margin-top: 50px">
+
+                <!-- Main Footer -->
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div id="main-footer">
+
+                        <div class="row">
+
+                            <!-- Information -->
+                            <div class="col-lg-6 col-md-6 col-sm-4">
+                                <b>
+                                    <h4>CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN</h4>
+                                </b>
+                                <b>
+                                    <h4>MÁY NÔNG NGHIỆP TÂY NGUYÊN</h4>
+                                </b>
+                                <br />
+                                Địa chỉ: Thôn Mỹ Yên, Xã Đức Minh, Huyện Đắk Mil, Đắk Nông
+                                <br />
+                                Điện thoại: 05013.751.979 - Đường dây nóng: 0906.529.929
+                            </div>
+                            <!-- /Information -->
+                            
+							<!-- Contact Us -->
+							<div class="col-lg-3 col-md-3 col-sm-4 contact-footer-info">
+								<h4>Liên hệ</h4>
+								<ul>
+									<li><i class="icons icon-location"></i>Thôn Mỹ Yên, Xã Đức Minh, Huyện Đắk Mil, Đắk Nông.</li>
+                                    <li><i class="icons icon-phone"></i>05013.751.979</li>
+                                    <li><i class="icons icon-phone"></i>0906.529.929</li>
+									<li><i class="icons icon-mail-alt"></i><a href="mailto:mail@company.com"> mail@companyname.com</a></li>
+									<%--<li><i class="icons icon-skype"></i> homeshop</li>--%>
+								</ul>
+                                
+                                <!-- Social Media -->
+                                <div class="social-media">
+                                    <ul>
+                                        <li class="social-googleplus tooltip-hover" data-toggle="tooltip" data-placement="top" title="Google+"><a href="#"></a></li>
+                                        <li class="social-facebook tooltip-hover" data-toggle="tooltip" data-placement="top" title="Facebook"><a href="#"></a></li>
+                                        <li class="social-pinterest tooltip-hover" data-toggle="tooltip" data-placement="top" title="Pinterest"><a href="#"></a></li>
+                                        <li class="social-twitter tooltip-hover" data-toggle="tooltip" data-placement="top" title="Twitter"><a href="#"></a></li>
+                                        <li class="social-youtube tooltip-hover" data-toggle="tooltip" data-placement="top" title="Youtube"><a href="#"></a></li>
+                                    </ul>
+                                </div>
+                                <!-- /Social Media -->
+                                
+							</div>
+							<!-- /Contact Us -->
+							
+                            <!-- Newsletter -->
+                            <div class="col-lg-3 col-md-3 col-sm-4">
+                                <form id="newsletter" action="php/newsletter.php">
+                                    <h4>Đăng kí nhận tin</h4>
+                                    <p>Nhận tin tức mới về sản phẩm và chương trình khuyến mãi!</p>
+                                    <input type="text" name="newsletter-email" placeholder="Nhập địa chỉ email của bạn">
+                                    <input type="submit" name="newsletter-submit" value="Đăng kí">
+                                </form>
+                            </div>
+                            <!-- /Newsletter -->
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /Main Footer -->
+
+            </footer>
+            <!-- Footer -->
+
+
+            <div id="back-to-top">
+                <i class="icon-up-dir"></i>
+            </div>
+
+        </div>
+        <!-- Container -->
+
+        <asp:HiddenField runat="server" ID="hdUser" />
+        <Telerik:RadWindowManager ID="RadWindowManager11" runat="server" />
+
+    <!-- JavaScript -->
+    <script src="../../../../js/modernizr.min.js"></script>
+    <script src="../../../../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../../js/jquery.raty.min.js"></script>
+
+    <!-- Scroll Bar -->
+    <script src="../../../../js/perfect-scrollbar.min.js"></script>
+
+    <!-- Cloud Zoom -->
+    <script src="../../../../js/zoomsl-3.0.min.js"></script>
+
+    <!-- FancyBox -->
+    <script src="../../../../js/jquery.fancybox.pack.js"></script>
+
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="../../../../js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="../../../../js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- FlexSlider -->
+    <script defer src="../../../../js/flexslider.min.js"></script>
+
+    <!-- IOS Slider -->
+    <script src="../../../../js/jquery.iosslider.min.js"></script>
+
+    <!-- noUi Slider -->
+    <script src="../../../../js/jquery.nouislider.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="../../../../js/owl.carousel.min.js"></script>
+
+    <!-- Cloud Zoom -->
+    <script src="../../../../js/zoomsl-3.0.min.js"></script>
+
+    <!-- SelectJS -->
+    <script src="../../../../js/chosen.jquery.min.js" type="text/javascript"></script>
+
+    <!-- Main JS -->
+    <script src="../../../../js/bootstrap.min.js"></script>
+    <script src="../../../../js/main-script.js"></script>
+        <asp:ContentPlaceHolder ID="afterJs" runat="server" />
+    </form>
+</body>
+</html>
